@@ -1,0 +1,387 @@
+
+    <div class="page-header">
+        <!-- page header -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!-- page title -->
+                    <h1 class="page-title">Hostel Grid List</h1>
+                </div>
+                <!-- /.page title -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!-- breadcrumb -->
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Hostel Grid List</li>
+                    </ol>
+                </div>
+                <!-- /.breadcrumb -->
+            </div>
+        </div>
+    </div>
+    <!-- /.page header -->
+    <div class="content">
+        <!-- content -->
+       <div class="listing-search-box">
+            <!-- search bg-->
+            <div class="container">
+                <div class="row">
+                    <div class="search-form">
+                        <form class="">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <label for="from" class="control-label sr-only">Destination</label>
+                                <select id="selectbasic" name="selectbasic" class="form-control selectpicker">
+                                    <option value="Destination">Destination</option>
+                                    <option class="" value="Australia">Australia</option>
+                                    <option class="" value="Czech">Czech</option>
+                                    <option class="" value="Germany">Germany</option>
+                                    <option class="" value="Greek">Greek</option>
+                                    <option class="" value="Iceland">Iceland</option>
+                                    <option class="" value="35">Italy</option>
+                                    <option class="" value="4">Maldives</option>
+                                    <option class="" value="39">Miami</option>
+                                    <option class="" value="34">Poland</option>
+                                    <option class="" value="32">Switzerland</option>
+                                    <option class="" value="6">United States</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 col-sm-6 col-xs-12">
+                                <label for="from" class="control-label sr-only">Guest</label>
+                                <select id="selectbasic" name="selectbasic" class="form-control selectpicker">
+                                    <option value="Guest">Guest</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                <label for="from" class="control-label sr-only">Date</label>
+                                <input type="text" id="demo" name="from" class="form-control selectpicker" placeholder="Check In">
+                            </div>
+                            <div class="col-md-2 col-sm-12 col-xs-12">
+                                <button class="btn btn-default btn-block btn-lg" type="submit">Search Hostel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.search bg-->
+        <div class="content-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="search-filter-sidebar">
+                            <div class="filter-head">
+                                <h4 class="filter-title">Search for Hostel</h4></div>
+                            <div class="filter-star-rating filter-box">
+                                <!-- star rating filter -->
+                                <h4 class="filter-lable-title">Star Rating</h4>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                        <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></span>
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                        <span class="rate">
+                                          <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                        <span class="rate"> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                        <span class="rate"><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                        <span class="rate"> <i class="fa fa-star"></i></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- /.star rating filter -->
+                            <div class="filter-price filter-box">
+                                <h4 class="filter-lable-title">Price </h4>
+                                <label for="amount" class="sr-only"> </label>
+                                <div id="price-range"></div>
+                                <input type="text" id="amount" readonly class="amount">
+                            </div>
+                            <div class="filter-amenities filter-box">
+                                <h4 class="filter-lable-title">Amenities </h4>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Air Conditioning
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Breakfast
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Cable TV
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Wifi
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter-facilities filter-box">
+                                <h4 class="filter-lable-title">Facilities </h4>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Alaram Clock
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Bathroom
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> iPod Dock
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Laptop Safe
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter-reviews filter-box">
+                                <h4 class="filter-lable-title">Reviews </h4>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Excellent 4+
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Very Good 3+
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Average 2+
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Poor 1+
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Terrible
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="filter-action filter-box">
+                                <button class="btn btn-default btn-block" type="submit">Search Hostel</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="list-sorting">
+                                    <select class="form-control selectpicker">
+                                        <option>Price</option>
+                                        <option value="price_asc">Low to High</option>
+                                        <option value="price_desc">High to Low</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="list-sorting">
+                                    <select class="form-control selectpicker">
+                                        <option value="">Name</option>
+                                        <option value="name_a_z">Name (A-Z)</option>
+                                        <option value="name_z_a">Name (Z-A)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="listing-views">
+                                    <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-list-ul"></i> Gird View</a> <a href="#" class="btn btn-secondary btn-xs"><i class="fa fa-th"></i> List View </a> </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="hostel-thumbnail-list">
+                                    <!-- hostel thumbnail list -->
+                                    <div class="hostel-list-img">
+                                        <a href="#"><img src="dist/images/hostel-1.jpg" alt="accommodation booking websites design"></a>
+                                        <div class="hostel-wishlist"><a href="#" class="wishlist-heart"></a></div>
+                                    </div>
+                                    <div class="hostel-content">
+                                        <div class="hostel-head">
+                                            <h3 class="hostel-title"><a href="#" class="title">Hostel Name Title Here</a></h3>
+                                            <p class="hostel-address">3989 Elk City Road Indianapolis, IN 46204</p>
+                                        </div>
+                                        <div class="hostel-meta">
+                                            <span class="hostel-price"><span class="price-from">From</span> <span class="price">$40.82</span></span>
+                                            <span class="hostel-rating">
+                                    <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                            <span class="reviews">2 Reviews</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.hostel thumbnail list -->
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="hostel-thumbnail-list">
+                                    <!-- hostel thumbnail list -->
+                                    <div class="hostel-list-img">
+                                        <a href="#"><img src="dist/images/hostel-2.jpg" alt="accommodation booking websites design"></a>
+                                        <div class="hostel-wishlist"><a href="#" class="wishlist-heart"></a></div>
+                                    </div>
+                                    <div class="hostel-content">
+                                        <div class="hostel-head">
+                                            <h3 class="hostel-title"><a href="#" class="title">Hostel Name Title Here</a></h3>
+                                            <p class="hostel-address">3989 Elk City Road Indianapolis, IN 46204</p>
+                                        </div>
+                                        <div class="hostel-meta">
+                                            <span class="hostel-price"><span class="price-from">From</span> <span class="price">$40.82</span></span>
+                                            <span class="hostel-rating">
+                                    <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                            <span class="reviews">2 Reviews</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.hostel thumbnail list -->
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="hostel-thumbnail-list">
+                                    <!-- hostel thumbnail list -->
+                                    <div class="hostel-list-img">
+                                        <a href="#"><img src="dist/images/hostel-3.jpg" alt="accommodation booking websites design"></a>
+                                        <div class="hostel-wishlist"><a href="#" class="wishlist-heart"></a></div>
+                                    </div>
+                                    <div class="hostel-content">
+                                        <div class="hostel-head">
+                                            <h3 class="hostel-title"><a href="#" class="title">Hostel Name Title Here</a></h3>
+                                            <p class="hostel-address">3989 Elk City Road Indianapolis, IN 46204</p>
+                                        </div>
+                                        <div class="hostel-meta">
+                                            <span class="hostel-price"><span class="price-from">From</span> <span class="price">$40.82</span></span>
+                                            <span class="hostel-rating">
+                                    <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                            <span class="reviews">1 Reviews</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.hostel thumbnail list -->
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="hostel-thumbnail-list">
+                                    <!-- hostel thumbnail list -->
+                                    <div class="hostel-list-img">
+                                        <a href="#"><img src="dist/images/hostel-4.jpg" alt="accommodation booking websites design"></a>
+                                        <div class="hostel-wishlist"><a href="#" class="wishlist-heart"></a></div>
+                                    </div>
+                                    <div class="hostel-content">
+                                        <div class="hostel-head">
+                                            <h3 class="hostel-title"><a href="#" class="title">Hostel Name Title Here</a></h3>
+                                            <p class="hostel-address">3989 Elk City Road Indianapolis, IN 46204</p>
+                                        </div>
+                                        <div class="hostel-meta">
+                                            <span class="hostel-price"><span class="price-from">From</span> <span class="price">$40.82</span></span>
+                                            <span class="hostel-rating">
+                                    <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                            <span class="reviews">1 Reviews</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.hostel thumbnail list -->
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="hostel-thumbnail-list">
+                                    <!-- hostel thumbnail list -->
+                                    <div class="hostel-list-img">
+                                        <a href="#"><img src="dist/images/hostel-1.jpg" alt="accommodation booking websites design"></a>
+                                        <div class="hostel-wishlist"><a href="#" class="wishlist-heart"></a></div>
+                                    </div>
+                                    <div class="hostel-content">
+                                        <div class="hostel-head">
+                                            <h3 class="hostel-title"><a href="#" class="title">Hostel Name Title Here</a></h3>
+                                            <p class="hostel-address">3989 Elk City Road Indianapolis, IN 46204</p>
+                                        </div>
+                                        <div class="hostel-meta">
+                                            <span class="hostel-price"><span class="price-from">From</span> <span class="price">$40.82</span></span>
+                                            <span class="hostel-rating">
+                                    <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                            <span class="reviews">1 Reviews</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.hostel thumbnail list -->
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="hostel-thumbnail-list">
+                                    <!-- hostel thumbnail list -->
+                                    <div class="hostel-list-img">
+                                        <a href="#"><img src="dist/images/hostel-2.jpg" alt="accommodation booking websites design"></a>
+                                        <div class="hostel-wishlist"><a href="#" class="wishlist-heart"></a></div>
+                                    </div>
+                                    <div class="hostel-content">
+                                        <div class="hostel-head">
+                                            <h3 class="hostel-title"><a href="#" class="title">Hostel Name Title Here</a></h3>
+                                            <p class="hostel-address">3989 Elk City Road Indianapolis, IN 46204</p>
+                                        </div>
+                                        <div class="hostel-meta">
+                                            <span class="hostel-price"><span class="price-from">From</span> <span class="price">$40.82</span></span>
+                                            <span class="hostel-rating">
+                                    <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                            <span class="reviews">1 Reviews</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.hostel thumbnail list -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="pagination">
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                          <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
