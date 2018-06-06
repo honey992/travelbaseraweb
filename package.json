@@ -1,0 +1,23 @@
+{
+  "name": "travelbaseraweb",
+  "version": "1.0.0",
+  "description": "travelbasera",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://nodejsdeveloper@bitbucket.org/shappy0/travelbaseraweb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/shappy0/travelbaseraweb#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "http": "0.0.0",
+    "morgan": "^1.9.0",
+    "path": "^0.12.7"
+  }
+}
