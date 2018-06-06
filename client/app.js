@@ -17,6 +17,15 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         }).when("/packages", {
             templateUrl: "/pages/package-view.html",
             controller: "userController"
+        }).when("/package-detail", {
+            templateUrl: "/pages/package-details.html",
+            controller: "packageDetailController"
+        }).when("/register", {
+            templateUrl: "/pages/register.html",
+            controller: "userController"
+        }).when("/login", {
+            templateUrl: "/pages/login.html",
+            controller: "userController"
         })
         .otherwise({
             redirectTo: "/"

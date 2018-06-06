@@ -4,7 +4,7 @@
     <div class="thumbnail-carousel">
        <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
       <div owl-carousel-item="" ng-repeat="item in fbAlbumImages" class="item">
-        <img ng-src="{{item.source}}">
+        <img ng-src="{{item.source}}" height="500px">
       </div>
     </data-owl-carousel>
     </div>
@@ -18,6 +18,23 @@
                         </div>
         </div>
         </div>
+        <div class="container" >
+        <div class="search-box search-transparent" style="display: flex">
+                <input type="text" class="form-control" placeholder="From" />
+                 <i class="fa fa-map-marker" style="    position: absolute;
+    left: 15px;
+    top: 23px; color:#fff"></i>
+                <input type="text" class="form-control" placeholder="To" />
+                 <i class="fa fa-location-arrow" style="    position: absolute;
+    left:355px;
+    top: 23px;color:#fff"></i>
+                <input type="date" class="form-control" placeholder="From" />
+                <i class="fa fa-calendar" style="    position: absolute;
+    right: 392px;
+    top: 23px;color:#fff"></i>
+                <button class="btn btn-default">Find</button>
+        </div>
+                        </div>
     </div>
 
     <!-- Packages Section start -->
@@ -41,7 +58,7 @@
                                 <div class="hostel-thumbnail-list">
                                     <!-- hostel thumbnail list -->
                                     <div class="hostel-list-img">
-                                        <a href="hostel-single-page.html"><img ng-src="{{item.image}}" alt="accommodation booking websites design"></a>
+                                        <a href="hostel-single-page.html"><img ng-src="{{item.image}}"  alt="accommodation booking websites design"></a>
                                         <div class="hostel-wishlist"><a href="#" class="wishlist-heart"></a></div>
                                         <div class="popular_Overlay">
                                             <h3 style="color:#fff">Some Title Here</h3>
@@ -51,7 +68,7 @@
                                     </div>
                                     <div class="hostel-content">
                                         <div class="hostel-head">
-                                            <h3 class="hostel-title"><a href="hostel-single-page.html" class="title">{{item.title}}</a></h3>
+                                            <h3 class="hostel-title"><a href="/package-detail" class="title">{{item.title}}</a></h3>
                                             <p class="hostel-address">{{item.description}}</p>
                                         </div>
                                         <div class="hostel-meta">

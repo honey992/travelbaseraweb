@@ -1,7 +1,10 @@
 'use Strict';
 
 app.controller('userController', function($scope){
-$scope.fbAlbumImages = [{source:"dist/images/hero-image.jpg"},{source:"dist/images/hero-image.jpg"},{source:"dist/images/hero-image.jpg"}]
+$scope.fbAlbumImages = [{source:"https://newevolutiondesigns.com/images/freebies/city-wallpaper-5.jpg"},
+                        {source:"https://newevolutiondesigns.com/images/freebies/city-wallpaper-preview-1.jpg"},
+                        {source:"dist/images/hero-image.jpg"}
+                      ];
  
    $scope.popularData = [{
    						image:"dist/images/hostel-1.jpg",
