@@ -1,16 +1,23 @@
 'use Strict';
 
 app.controller('userController', function($scope, $http,constant){
-  $http.get(constant.BASE_URL+constant.BANNAR_URL).then(function success(res){
-               $scope.countryList = res.data.data;
+ 
+
+  $scope.banners = function(){
+    $http.get(constant.BASE_URL+constant.BANNAR_URL).then(function success(res){
+               $scope.bannersList = res.data.data;
             }, function errorCallback(err){
                 $scope.errorPop = true;
                 $scope.successPop = false;
                 $scope.errorMsg = err.data.message;
       });
-$scope.fbAlbumImages = [{source:"https://newevolutiondesigns.com/images/freebies/city-wallpaper-5.jpg"},
-                        {source:"https://newevolutiondesigns.com/images/freebies/city-wallpaper-preview-1.jpg"},
-                        {source:"dist/images/hero-image.jpg"}
+  };
+  $scope.banners();
+  
+$scope.bannerImages = [
+                        {imageUrl:"https://newevolutiondesigns.com/images/freebies/city-wallpaper-5.jpg"},
+                        {imageUrl:"https://newevolutiondesigns.com/images/freebies/city-wallpaper-preview-1.jpg"},
+                        {imageUrl:"dist/images/hero-image.jpg"}
                       ];
  
    $scope.popularData = [{

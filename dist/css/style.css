@@ -690,8 +690,10 @@ input[type=radio] {
     color: #fbfbfb;
         letter-spacing: 0.6px;
 }
-.header {
-    background: #fff;
+.header { 
+    position: absolute;
+    z-index:9999;
+    width:100%;
 }
 .logo {}
 .logo img { /*width:50%;*/ }
@@ -760,6 +762,7 @@ input[type=radio] {
     z-index: 99;
 }
 #navigation>ul>li {
+    font-family: 'Quicksand', sans-serif;
     float: left;
 }
 #navigation.align-center>ul {
@@ -780,11 +783,10 @@ input[type=radio] {
     padding:30px 10px;
     font-size:16px;
     text-decoration: none;
-    color: #646869;
-    font-weight: bold
+    color: #fff;
 }
 #navigation>ul>li:hover>a {
-    color: #333;
+    color: #1b75fa;
 }
 #navigation>ul>li.has-sub>a {
     padding-right: 30px;
@@ -857,8 +859,7 @@ input[type=radio] {
     width: 220px;
     font-size: 16px;
     text-decoration: none;
-    color: #646869;
-    font-weight: bold;
+    color: #646869; 
     background: #fff;
 
 }
@@ -868,7 +869,7 @@ input[type=radio] {
 }
 #navigation ul ul li:hover>a,
 #navigation ul ul li a:hover {
-    color: #333;
+    color: #1b75fa;
 }
 #navigation ul ul li.has-sub>a:after {
     position: absolute;
@@ -1267,11 +1268,11 @@ Homepage-2
     padding-top: 170px;
 }
 .search-transparent.search-box {
-    background: rgba(31, 31, 31, 0.47);
+    background:rgba(31, 31, 31, 0.58);
     border-radius: 4px;
     padding: 9px 9px;
     position: absolute;
-    top: 35%;
+    top: 55%;
     z-index: 999;
     width: 85%;
     margin:auto 5px;
@@ -3172,6 +3173,10 @@ a img.aligncenter {
     width: 100%;
     top: 0;
     box-shadow: 1px 1px 3px #ccc;
+    background:#fff;
+}
+.fixed #navigation>ul>li>a{
+    color:#646869;
 }
 .header-banner{
     position: relative;
@@ -3191,7 +3196,7 @@ a img.aligncenter {
 .content-Banner{
     position: absolute;
     width:100%;
-    bottom: 0px;
+        top: 175px;
     color: #000;
     z-index: 999;
 }
@@ -3250,4 +3255,13 @@ background: #0069ff;
     background: #c5a55e;
     color: #fff;
     border-bottom: 2px solid #715c2b;
+}
+.bannerOverlays    {
+    background: #00000061;
+    width: 100%; 
+    position: absolute;
+    top: 0px;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
 }

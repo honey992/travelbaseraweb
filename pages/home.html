@@ -3,11 +3,12 @@
     <div class="header-banner">
     <div class="thumbnail-carousel">
        <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
-      <div owl-carousel-item="" ng-repeat="item in fbAlbumImages" class="item">
-        <img ng-src="{{item.source}}" height="500px">
+      <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
+        <img ng-src="{{item.imageUrl}}" height="500px">
       </div>
     </data-owl-carousel>
     </div>
+    <div class="bannerOverlays"></div>
 
      
         <div class="content-Banner">
