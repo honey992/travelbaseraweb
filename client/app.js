@@ -26,6 +26,9 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         }).when("/login", {
             templateUrl: "/pages/login.html",
             controller: "userController"
+        }).when("/cities", {
+            templateUrl: "/pages/cities.html",
+            controller: "citiesController"
         })
         .otherwise({
             redirectTo: "/"
@@ -77,7 +80,11 @@ app.directive("owlCarousel", function() {
     }
 ]);
 
-
+app.filter('splitByName', function(){ 
+  return function(str){
+    return str.split('-')[1]
+  }
+})
 // app.run(function ($rootScope, $location, $route,$document,jwtHelper) {
 //   $rootScope.$on('$routeChangeStart',
 //     function (event, next, current) { 

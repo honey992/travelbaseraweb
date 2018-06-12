@@ -55,7 +55,7 @@
         </div>
         
     </div>
-    <div class="header">
+    <div class="header" ng-controller="headerController">
             <!-- header -->
             <div class="container-fluid">
                 <div class="row">
@@ -71,35 +71,13 @@
                                 <ul>
                                    <li><a href="/">Home</a></li> 
                                     <li><a href="/about-us">About</a></li>
-                                    <li><a href="#">Destinations</a>
-                                        <ul>
-                                            <li><a href="checkout-page.html">Checkout page</a></li>
-                                            <li><a href="#">User page</a>
+                                    <li><a href="javascript:void(0)">Destinations</a>
+                                       <ul>
+                                            <li ng-repeat="x in destinations_Menu"><a href="javascript:void(0)">{{x._id | splitByName}}</a>
                                                 <ul>
-                                                    <li><a href="login-page.html">Login page</a></li>
-                                                    <li><a href="signup-page.html">Register page</a></li>
+                                                    <li ng-repeat="y in x.data"><a href="javascript:void(0)" ng-click="redirectToCities(y.name, y.code)">{{y.name}}</a></li> 
                                                 </ul>
                                             </li>
-                                            <li><a href="#">User Dashboard</a>
-                                                <ul>
-                                                    <li><a href="user-dashboard.html">User Dashboard</a></li>
-                                                    <li><a href="user-dashboard-wishlist.html">User Wishlist</a></li>
-                                                    <li><a href="user-dashboard-edit-profile.html">User Profile</a></li>
-                                                    <li><a href="user-dashboard-booking.html">User Booking</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Partner Dashboard</a>
-                                                <ul>
-                                                    <li><a href="partner-dashboard.html">Partner Dashboard</a></li>
-                                                    <li><a href="partner-my-order-dashboard.html">Order List</a></li>
-                                                    <li><a href="partner-manage-service-dashboard.html">Create List</a></li>
-                                                    <li><a href="partner-withdraw-dashboard.html">Payment Withdraw</a></li>
-                                                    <li><a href="partner-inbox-dashboard.html">Inbox</a></li>
-                                                    <li><a href="partner-profile-dashboard.html">Profile</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact-us-page.html">Contact us</a></li>
-                                            <li><a href="error-page.html">404 Error</a></li>
                                         </ul>
                                     </li>
                                    <li><a href="#">International </a>
@@ -238,6 +216,8 @@
      <script src="client/constant.js"></script>
       <script src="client/homePageController.js"></script>
       <script src="client/packageDetailsController.js"></script>
+       <script src="client/headerController.js"></script>
+       <script src="client/citiesController.js"></script>
     
 </body>
 
