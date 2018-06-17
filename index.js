@@ -8,8 +8,8 @@ app.use(logger('dev'));
 
 app.set('port', process.env.PORT || 3000); 
 
-app.set('env','development')  ;
-// app.set('views', path.join(__dirname, 'pages'));
+app.set('env','development')  ; 
+app.set('views', path.join(__dirname, '/pages'));
 app.use(express.static(path.join(__dirname, '/')));
 
  app.use(function(req, res, next) {
@@ -20,9 +20,9 @@ app.use(express.static(path.join(__dirname, '/')));
  
  
  
-app.all('*', function(req, res) {
-    res.sendfile('index.html');  
-});
+	app.all('*', function(req, res) {
+	    res.sendfile('index.html');  
+	});
 
 server.on('error', function(err){
 	process.exit(1);

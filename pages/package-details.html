@@ -1,18 +1,29 @@
+<style>
+    .header{background-color: #fff;}
+    .header #navigation>ul>li>a{color:#646869;}
+    .content{margin-top:95px;}
+</style>
 <!-- /.single page header -->
     <div class="content">
         <!-- content -->
         <div class="content-area"> 
             <div class="container">
-            <div class="package__title">Hostel Name Title Here</div>
+            <div class="package__title">{{data.title}}</div>
                 <div class="row">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding-right:0px">
         <div class="single-page-header" style="position: relative;">
-
-            <img src="https://yuvatrip.com/btc/images/holidays/header/h_75.png" width="100%" style="">
+            <div class="thumbnail-carousel">
+               <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
+              <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
+                <img ng-src="http://localhost:3001/{{item}}" height="400px">
+              </div>
+            </data-owl-carousel>
+            </div>
+            <!-- <img src="https://yuvatrip.com/btc/images/holidays/header/h_75.png" width="100%" style=""> -->
             <div class="img__Overlay"></div>
           <div class="daysBox"> 
-            <span style="display: block">4 <i class="fa fa-sun-o"></i></span>
-            <span> 3 <i class="fa fa-moon-o"></i></span>
+            <span style="display: block">{{data.days}} <i class="fa fa-sun-o"></i></span>
+            <span> {{data.nights}} <i class="fa fa-moon-o"></i></span>
         </div>
         <!-- single page header -->
         <div class="container">
@@ -21,7 +32,7 @@
 
                 <div class="price-box">
                                 <h2 class="hostel-rate"> 
-                                    <span class="rate-from">from</span>$20.82
+                                    <span class="rate-from">From</span><i class="fa fa-rupee"></i> {{data.rate}}
                                 </h2>
                 </div>
                     
@@ -47,81 +58,30 @@
   <div class="tab-content">
    <!--Tab 1-->
     <div id="home" ng-show="isSet(1)" class="tab-pane fade in active">
-     <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#overview">Overview of Hostel</a>
-            </h4>
-          </div>
-          <div id="overview" class="panel-collapse collapse">
-            <div class="panel-body">
-                <p>Rooms can be mixed or single-sex, and private rooms may also be available.</p>
-                <h3>About this hostel</h3>
-                <p>Pellentesque sed elit a augue condimentum varius. Integer porttitor neque quis velit tempor malesuada et cursus velit. Fusce vitae nulla at magna hendrerit ringilla eu sit amet metus.
-                </p>
-                <p>Nulla facilisi. Ut placerat variuu endisse potenti. Pellentesque sed elit a augue condimentum varius. Integer porttitor neque quis velit tempor malesuada et cursus velit. Fusce vitae nulla at magna hendrerit ringilla eu sit amet metus. Nulla facilisi. Ut placerat varius cursus.</p>
-                <ul class="listnone check-circle">
-                    <li>See the towers at sunrise – a powerful, almost spiritual, experience.</li>
-                    <li>Stay in local refugios that offer a chance to connect with travelers of a similar.</li>
-                    <li>Several optional add ons including massages, kayaking and glacier trekking.</li>
-                    <li>Further arrangements to El Calafate in Argentina can be made.</li>
-                </ul>
-            </div> 
-          </div>
-    </div>
-    <p>
-        Srinagar lies in the heart of the Kashmir valley and is the capital city of Jammu and Kashmir state of India. It is even acknowledged as paradise on earth with its pristine beauty. One can relax in this place with fresh air, snow capped mountains, rivers flowing downstream, and amazing house boats make it a perfect holiday destination. River Jhelum adds to the beauty of Srinagar. There are lots of magnetizing attractions for tourist to visit. Starting from the world renowned Dal Lake with picturesque scenery in the backdrop. Explore the beauty with wonderful shakira rides in dal lake. You can also visit the great Mughal gardens Chashmashahi Garden, Nishat Garden, and Shalimar Garden is famous for its magnificent beauty.
-    </p>
+        <h4>Overview</h4><hr/>
+       <div ng-bind-html="packDescription"></div>
     </div>
     <!--Tab2-->
-    <div id="menu1" ng-show="isSet(2)" class="tab-pane fade in active">
-      <h4>Menu 1</h4><hr/>
-      <p>Srinagar lies in the heart of the Kashmir valley and is the capital city of Jammu and Kashmir state of India. It is even acknowledged as paradise on earth with its pristine beauty. One can relax in this place with fresh air, snow capped mountains, rivers flowing downstream, and amazing house boats make it a perfect holiday destination. River Jhelum adds to the beauty of Srinagar. There are lots of magnetizing attractions for tourist to visit. Starting from the world renowned Dal Lake with picturesque scenery in the backdrop. Explore the beauty with wonderful shakira rides in dal lake. You can also visit the great Mughal gardens Chashmashahi Garden, Nishat Garden, and Shalimar Garden is famous for its magnificent beauty.</p>
+    <div id="menu1" ng-show="isSet(2)" class="tab-pane fade in active"> 
+      <h4>Inclusions</h4><hr/>
+      <div ng-repeat="x in data.inclusions[0]">
+        <b>{{x.title}}</b>
+        <p>{{x.description}}</p>
+      </div>
+      <h4>Exclusions</h4><hr/>
+      <div ng-repeat="x in data.exclusion[0]">
+        <b>{{x.title}}</b>
+        <p>{{x.description}}</p>
+      </div>
     </div>
 
     <!--Tab3-->
     <div id="menu2" ng-show="isSet(3)" class="tab-pane fade in active">
-      <h4>Menu 2</h4><hr/>
-      <!-- Amenities Accordion -->
-        <div class="panel panel-default">
-              <div class="panel-heading">
-                <h4 class="panel-title">
-                  <a data-toggle="collapse" href="#amenities">Amenities</a>
-                </h4>
-              </div>
-              <div id="amenities" class="panel-collapse collapse">
-                <div class="panel-body">
-                                    <p>A desirable or useful feature or facility of a hostel and places.</p>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <ul class="listnone check-circle">
-                                                <li>Air Conditioning</li>
-                                                <li>Free WiFi</li>
-                                                <li>Breakfast</li>
-                                                <li>Laundry Facilities</li>
-                                                <li>House Keeping</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <ul class="listnone check-circle">
-                                                <li>Fridge/Freezer</li>
-                                                <li>Security Lockers</li>
-                                                <li>Parking</li>
-                                                <li>24 Hour Security</li>
-                                                <li>Hot Showers</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                            <ul class="listnone check-circle">
-                                                <li>Luggage Storage</li>
-                                                <li>24 Hour Reception</li>
-                                                <li>Free City Maps</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                </div> 
-              </div>
-        </div> 
+    <h4>Itenary</h4><hr/>
+      <div ng-repeat="x in data.itenaries[0].package_itenary">
+        <b>{{x.title}}</b>
+        <p>{{x.description}}</p>
+      </div>
     </div>
 
     <!--Tab4-->
@@ -136,114 +96,17 @@
     </div>
   </div>
 
-  
-<!-- Amenities Accordion -->
-    <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#amenities">Amenities</a>
-            </h4>
-          </div>
-          <div id="amenities" class="panel-collapse collapse">
-            <div class="panel-body">
-                                <p>A desirable or useful feature or facility of a hostel and places.</p>
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                        <ul class="listnone check-circle">
-                                            <li>Air Conditioning</li>
-                                            <li>Free WiFi</li>
-                                            <li>Breakfast</li>
-                                            <li>Laundry Facilities</li>
-                                            <li>House Keeping</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                        <ul class="listnone check-circle">
-                                            <li>Fridge/Freezer</li>
-                                            <li>Security Lockers</li>
-                                            <li>Parking</li>
-                                            <li>24 Hour Security</li>
-                                            <li>Hot Showers</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                        <ul class="listnone check-circle">
-                                            <li>Luggage Storage</li>
-                                            <li>24 Hour Reception</li>
-                                            <li>Free City Maps</li>
-                                        </ul>
-                                    </div>
-                                </div>
-            </div> 
-          </div>
-    </div> 
-    <!-- Gallery Accordion -->
-    <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#gallery">Gallery</a>
-            </h4>
-          </div>
-          <div id="gallery" class="panel-collapse collapse">
-            <div class="panel-body">
-                               <p><a href="http://dimsemenov.com/plugins/magnific-popup/" target="_blank"> Magnific Popup </a>is a responsive lightbox &amp; dialog javascript image thumbnail gallery.</p>
-                                <div class="gallery-block">
-                                    <a class="popup-link" href="dist/images/gallery-big-1.jpg" title="Hostel Website Templates">
-                                    <img src="dist/images/gallery-small-1.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-2.jpg" title="Hotel Booking Website Templates">
-                                    <img src="dist/images/gallery-small-2.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-3.jpg" title="accommodation websites">
-                                    <img src="dist/images/gallery-small-3.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-4.jpg" title="best accommodation websites">
-                                    <img src="dist/images/gallery-small-4.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-5.jpg" title="Vaction Rental Website templates">
-                                    <img src="dist/images/gallery-small-5.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-6.jpg" title="Homeaway Website template">
-                                    <img src="dist/images/gallery-small-6.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-7.jpg" title="Mobile Hostel Website">
-                                    <img src="dist/images/gallery-small-7.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-8.jpg" title="Backpackers Website Templates">
-                                    <img src="dist/images/gallery-small-8.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-5.jpg" title="Vaction Rental Website templates">
-                                    <img src="dist/images/gallery-small-5.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-6.jpg" title="Homeaway Website template">
-                                    <img src="dist/images/gallery-small-6.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-7.jpg" title="Mobile Hostel Website">
-                                    <img src="dist/images/gallery-small-7.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-8.jpg" title="Backpackers Website Templates">
-                                    <img src="dist/images/gallery-small-8.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-1.jpg" title="Hostel Website Templates">
-                                    <img src="dist/images/gallery-small-1.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-2.jpg" title="Hotel Booking Website Templates">
-                                    <img src="dist/images/gallery-small-2.jpg" alt="Title">
-                                </a>
-                                    <a class="popup-link" href="dist/images/gallery-big-3.jpg" title="accommodation websites">
-                                    <img src="dist/images/gallery-small-3.jpg" alt="Title">
-                                </a>
-                                </div>
-            </div> 
-          </div>
-    </div>  
+     
 
 
                         
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="single-page-sidebar">
-
+                            <div class="widget widget-contact"> 
+                                <h3 class="widget-title">Inclusions</h3>
+                                <span ng-repeat="x in data.selectedInclusion">{{x.i_name}}</span>
+                            </div>
                             <div class="widget widget-contact"> 
                                 <h3 class="widget-title">Check Availability</h3>
                                 <button class="btn btn-default   btn-block" data-toggle="modal" data-target="#myModal">Check My Availability Now</button>

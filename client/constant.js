@@ -10,6 +10,9 @@ app.constant("constant", (function() {
 
         
         BANNAR_URL: "v1/api/banners",
-        STATESBYCOUNTRY : "v1/api/statesByCountry"
+        STATESBYCOUNTRY : "v1/api/statesByCountry",
+        CITYBySTATES:"v1/api/cityByStates",
+        PACKAGESBYCITY: "v1/api/packages",
+        PACKAGE_DETAILS : 'v1/api/package-details'
     }
 })());

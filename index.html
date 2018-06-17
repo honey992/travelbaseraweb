@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="dist/css/owl.theme.default.css">
     <!-- Style CSS -->
     <link href="dist/css/style.css" rel="stylesheet">
+    <base href="/" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -55,7 +56,12 @@
         </div>
         
     </div>
-    <div class="header" ng-controller="headerController">
+    <style>
+        .headerForPackDetail{
+            background-color: #fff
+        }
+    </style>
+    <div class="header" ng-controller="headerController" ng-class="{'headerForPackDetail':showHeader}">
             <!-- header -->
             <div class="container-fluid">
                 <div class="row">
@@ -75,7 +81,7 @@
                                        <ul>
                                             <li ng-repeat="x in destinations_Menu"><a href="javascript:void(0)">{{x._id | splitByName}}</a>
                                                 <ul>
-                                                    <li ng-repeat="y in x.data"><a href="javascript:void(0)" ng-click="redirectToCities(y.name, y.code)">{{y.name}}</a></li> 
+                                                    <li ng-repeat="y in x.data"><a href="javascript:void(0)" ng-click="redirectToCities(x._id,y.name, y.code)">{{y.name}}</a></li> 
                                                 </ul>
                                             </li>
                                         </ul>
@@ -218,6 +224,7 @@
       <script src="client/packageDetailsController.js"></script>
        <script src="client/headerController.js"></script>
        <script src="client/citiesController.js"></script>
+       <script src="client/packageController.js"></script>
     
 </body>
 

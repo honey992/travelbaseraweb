@@ -1,6 +1,6 @@
 'use Strict';
 
-app.controller('userController', function($scope, $http,constant){
+app.controller('homeController', function($scope, $http,constant){
  
 
   $scope.banners = function(){

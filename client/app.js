@@ -7,26 +7,26 @@ var app = angular.module('travelBasera', ["ngRoute",'angular-jwt']);
 app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
         $routeProvider.when("/", {
             templateUrl: "/pages/home.html",
-            controller: "userController"
+            controller: "homeController"
         }).when("/about-us", {
             templateUrl: "/pages/about-us.html",
-            controller: "userController"
+            controller: "homeController"
         }).when("/contact-us", {
             templateUrl: "/pages/contact-us-page.html",
-            controller: "userController"
-        }).when("/packages", {
+            controller: "homeController"
+        }).when("/holidays/:country/:state/:cityId", {
             templateUrl: "/pages/package-view.html",
-            controller: "userController"
-        }).when("/package-detail", {
+            controller: "packageController"
+        }).when("/holiday-details/:packageTitle", {
             templateUrl: "/pages/package-details.html",
             controller: "packageDetailController"
         }).when("/register", {
             templateUrl: "/pages/register.html",
-            controller: "userController"
+            controller: "homeController"
         }).when("/login", {
             templateUrl: "/pages/login.html",
-            controller: "userController"
-        }).when("/cities", {
+            controller: "homeController"
+        }).when("/holidays/:country/cities", {
             templateUrl: "/pages/cities.html",
             controller: "citiesController"
         })
