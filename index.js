@@ -9,8 +9,8 @@ app.use(logger('dev'));
 app.set('port', process.env.PORT || 3000); 
 
 app.set('env','development')  ; 
-app.set('views', path.join(__dirname, '/pages'));
-app.use(express.static(path.join(__dirname, '/')));
+app.set('views', path.join(__dirname, '/public'));
+app.use(express.static(path.join(__dirname, '/public')));
 
  app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

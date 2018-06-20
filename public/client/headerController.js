@@ -6,6 +6,7 @@ app.controller('headerController', function($scope, $http,constant, $location){
     return str.split('-')[1]
   }
  };
+  
  var pathName = (window.location.pathname || '').split('/')[1];
   $scope.showHeader = false;
  if(pathName.toLowerCase() == 'holiday-details') $scope.showHeader = true;

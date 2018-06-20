@@ -20,50 +20,39 @@ $scope.bannerImages = [
                         {imageUrl:"dist/images/hero-image.jpg"}
                       ];
  
-   $scope.popularData = [{
-   						image:"dist/images/hostel-1.jpg",
-   						title:'Hostel Name Title Here',
-   						description:'3989 Elk City Road Indianapolis, IN 46204',
-   						price:'$40.82',
-   						reviews:'2'
-   },{
-   						image:"dist/images/hostel-2.jpg",
-   						title:'Hostel Name Title Here',
-   						description:'3989 Elk City Road Indianapolis, IN 46204',
-   						price:'$40.82',
-   						reviews:'2'
-   },{
-   						image:"dist/images/hostel-3.jpg",
-   						title:'Hostel Name Title Here',
-   						description:'3989 Elk City Road Indianapolis, IN 46204',
-   						price:'$40.82',
-   						reviews:'2'
-   },{
-   						image:"dist/images/hostel-1.jpg",
-   						title:'Hostel Name Title Here',
-   						description:'3989 Elk City Road Indianapolis, IN 46204',
-   						price:'$40.82',
-   						reviews:'2'
-   },{
-   						image:"dist/images/hostel-2.jpg",
-   						title:'Hostel Name Title Here',
-   						description:'3989 Elk City Road Indianapolis, IN 46204',
-   						price:'$40.82',
-   						reviews:'2'
-   }];
- 
+ $scope.popularData = [];
+ $scope.popularPackages = function(){
+    $http.get(constant.BASE_URL+constant.POPULAR_PACKAGES).then(function success(res){
+               $scope.popular = res.data.data;
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+  $scope.popularPackages(); 
 
-$scope.testimonialsData = [{
-	image:"dist/images/testimonial-2.jpg",
-	name:'Kathy R. Burroughs',
-	title:'Had an amazing time and very good !!',
-	content:'“Elementum naon tellus sit amet ultricies. In nec elit velit. Nullam luctus efficitur urna, a accumsan nunc varius nec.”'
-},{
-	image:"dist/images/testimonial-1.jpg",
-	name:'Kathy R. Burroughs',
-	title:'Had an amazing time and very good !!',
-	content:'“Elementum naon tellus sit amet ultricies. In nec elit velit. Nullam luctus efficitur urna, a accumsan nunc varius nec.”'
-}];
+$scope.testimonials = function(){
+    $http.get(constant.BASE_URL+constant.TESTIMONIALS).then(function success(res){
+               $scope.testimonialsData = res.data.data;
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+  $scope.testimonials();
+// $scope.testimonialsData = [{
+// 	image:"dist/images/testimonial-2.jpg",
+// 	reviewer_name:'Kathy R. Burroughs',
+// 	title:'Had an amazing time and very good !!',
+// 	content:'“Elementum naon tellus sit amet ultricies. In nec elit velit. Nullam luctus efficitur urna, a accumsan nunc varius nec.”'
+// },{
+// 	image:"dist/images/testimonial-1.jpg",
+// 	reviewer_name:'Kathy R. Burroughs',
+// 	title:'Had an amazing time and very good !!',
+// 	content:'“Elementum naon tellus sit amet ultricies. In nec elit velit. Nullam luctus efficitur urna, a accumsan nunc varius nec.”'
+// }];
 
 	    $scope.bannerOptions = {
             stopOnHover: true,

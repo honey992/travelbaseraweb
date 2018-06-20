@@ -13,7 +13,7 @@ app.controller('packageController', function($scope, $http,constant, $location,$
   };
   $scope.getCountryStates();
 
-  $scope.redirectToPackageDetails = function(titleName){
+  $scope.redirectToPackageDetails = function(titleName, id){
     var title = titleName.split(' ').join('-');
   $location.path('/holiday-details/'+title).replace()
 

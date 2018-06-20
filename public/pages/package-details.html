@@ -1,7 +1,11 @@
+
 <style>
     .header{background-color: #fff;}
     .header #navigation>ul>li>a{color:#646869;}
     .content{margin-top:95px;}
+    .tab-pane hr{margin:0px;}
+    .tab-pane ul{padding-left: 20px;}
+    .tabpaneDiv{margin-bottom:10px;}
 </style>
 <!-- /.single page header -->
     <div class="content">
@@ -15,7 +19,7 @@
             <div class="thumbnail-carousel">
                <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
               <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
-                <img ng-src="https://admin-travelbasera.herokuapp.com/{{item}}" height="400px">
+                <img ng-src="http://localhost:3001/{{item}}" height="400px">
               </div>
             </data-owl-carousel>
             </div>
@@ -64,21 +68,24 @@
     <!--Tab2-->
     <div id="menu1" ng-show="isSet(2)" class="tab-pane fade in active"> 
       <h4>Inclusions</h4><hr/>
-      <div ng-repeat="x in data.inclusions[0]">
-        <b>{{x.title}}</b>
-        <p>{{x.description}}</p>
+      <div class="tabpaneDiv">
+        <ul>
+                <li ng-repeat="x in data.inclusions">{{x}}</li>
+            </ul>
       </div>
       <h4>Exclusions</h4><hr/>
-      <div ng-repeat="x in data.exclusion[0]">
-        <b>{{x.title}}</b>
-        <p>{{x.description}}</p>
+      <div class="tabpaneDiv" >
+            <ul>
+                <li ng-repeat="x in data.exclusions">{{x}}</li>
+            </ul>
+
       </div>
     </div>
 
     <!--Tab3-->
     <div id="menu2" ng-show="isSet(3)" class="tab-pane fade in active">
     <h4>Itenary</h4><hr/>
-      <div ng-repeat="x in data.itenaries[0].package_itenary">
+      <div ng-repeat="x in data.itenaries[0].package_itenary" style="margin-bottom:10px">
         <b>{{x.title}}</b>
         <p>{{x.description}}</p>
       </div>
@@ -105,7 +112,9 @@
                         <div class="single-page-sidebar">
                             <div class="widget widget-contact"> 
                                 <h3 class="widget-title">Inclusions</h3>
-                                <span ng-repeat="x in data.selectedInclusion">{{x.i_name}}</span>
+                                <span ng-repeat="x in data.selectedInclusion">
+                                <img src="http://localhost:3001/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
+                                </span>
                             </div>
                             <div class="widget widget-contact"> 
                                 <h3 class="widget-title">Check Availability</h3>

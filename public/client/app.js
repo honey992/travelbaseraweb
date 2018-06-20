@@ -34,10 +34,10 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
             redirectTo: "/"
         });
 
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        });
+        // $locationProvider.html5Mode({
+        //     enabled: true,
+        //     requireBase: false
+        // });
     }]);
 
 app.directive("owlCarousel", function() {

@@ -86,14 +86,14 @@
                                             </li>
                                         </ul>
                                     </li>
-                                   <li><a href="#">International </a>
+                                   <!-- <li><a href="#">International </a>
                                         <ul>
                                             <li><a href="blog-page.html">Blog Listing</a></li>
                                             <li><a href="blog-listing-3-column.html">Blog Listing 3 Column</a></li>
                                             <li><a href="blog-masonry.html">Blog Masonry</a></li>
                                             <li><a href="blog-single.html">Blog Single</a></li>
                                         </ul>
-                                    </li> 
+                                    </li>  -->
                                 </ul>
                             </div>
                             <!-- /.navigation -->
@@ -192,6 +192,12 @@
             </div>
         </div>
     </div>
+<div id="loader">
+<img src="dist/images/loader.gif" />
+</div>
+<style>
+   
+</style>
     <!-- /.tiny footer -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -225,6 +231,16 @@
        <script src="client/headerController.js"></script>
        <script src="client/citiesController.js"></script>
        <script src="client/packageController.js"></script>
+       <script>
+        var loader = document.getElementById('loader');
+       function showLoader(){
+        loader.style.display = 'block';
+
+       };
+       function hideLoader(){
+        loader.style.display = 'none';
+       }
+       </script>
     
 </body>
 

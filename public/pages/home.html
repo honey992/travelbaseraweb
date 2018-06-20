@@ -53,14 +53,15 @@
             </div>
            <div class="row">
                 <div class="thumbnail-carousel">
+
                      <data-owl-carousel class="owl-carousel" data-options="popularOptions">
-				      <div owl-carousel-item="" ng-repeat="item in popularData" class="item">
+
+				      <div owl-carousel-item="" ng-repeat="item in popular" class="item">
 				        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="hostel-thumbnail-list">
                                     <!-- hostel thumbnail list -->
                                     <div class="hostel-list-img">
-                                        <a href="hostel-single-page.html"><img ng-src="{{item.image}}"  alt="accommodation booking websites design"></a>
-                                        <div class="hostel-wishlist"><a href="#" class="wishlist-heart"></a></div>
+                                        <a href="hostel-single-page.html"><img ng-src="http://localhost:3001/{{item.mainImage}}"  alt=""></a>
                                         <div class="popular_Overlay">
                                             <h3 style="color:#fff">Some Title Here</h3>
                                             <p>Let’s imagine for a moment that there is portable version of Photoshop and you actually have it. Right click hover the file</p>
@@ -70,13 +71,14 @@
                                     <div class="hostel-content">
                                         <div class="hostel-head">
                                             <h3 class="hostel-title"><a href="/package-detail" class="title">{{item.title}}</a></h3>
-                                            <p class="hostel-address">{{item.description}}</p>
+                                            <ul style="list-style: none">    
+                                                <li ng-repeat="y in item.highlights" style="font-size: 13px;line-height: 18px">{{y.title}}</li>
+                                            </ul> 
                                         </div>
                                         <div class="hostel-meta">
-                                            <span class="hostel-price"><span class="price-from">From</span> <span class="price">{{item.price}}</span></span>
+                                            <span class="hostel-price"><span class="price-from">From</span> <span class="price">{{item.rate}}</span></span>
                                             <span class="hostel-rating">
-                                    <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
-                                            <span class="reviews">{{item.reviews}} Reviews</span>
+                                     <span class="reviews">{{item.days}} <i class="fa fa-sun-o" style="color: #1b75fa;"></i>/ {{item.nights}} <i class="fa fa-moon-o" style="color: #1b75fa;"></i></span>
                                             </span>
                                         </div>
                                     </div>
@@ -243,14 +245,14 @@
                                 <div class="testimonial-block">
                                     <!-- testimonial block -->
                                     <div class="testimonial-user">
-                                        <div class="testimonial-img"><img ng-src="{{item.image}}" alt="" class="img-circle"></div>
+                                        <div class="testimonial-img"><img style="width:80px; height:80px" ng-src="http://localhost:3001/{{item.reviewer_img}}" alt="" class="img-circle"></div>
                                         <div class="testimonial-info">
-                                            <h4 class="testimonial-name">{{item.name}}</h4>
+                                            <h4 class="testimonial-name">{{item.reviewer_name}}</h4>
                                         </div>
                                     </div>
                                     <div class="testimonial-content">
-                                        <h4>{{item.title}}</h4>
-                                        <p class="testimonial-text">{{item.content}}</p>
+                                        <h4>{{item.reviewer_title}}</h4>
+                                        <p class="testimonial-text">{{item.reviewer_desc}}</p>
                                         <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
                                     </div>
                             </div>
