@@ -19,7 +19,7 @@
             <div class="thumbnail-carousel">
                <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
               <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
-                <img ng-src="http://localhost:3001/{{item}}" height="400px">
+                <img ng-src="https://admin-travelbasera.herokuapp.com/{{item}}" height="400px">
               </div>
             </data-owl-carousel>
             </div>
@@ -93,13 +93,49 @@
 
     <!--Tab4-->
     <div id="menu3" ng-show="isSet(4)" class="tab-pane fade in active">
-      <h4>Menu 3</h4><hr/>
-      <p>Srinagar lies in the heart of the Kashmir valley and is the capital city of Jammu and Kashmir state of India. It is even acknowledged as paradise on earth with its pristine beauty. One can relax in this place with fresh air, snow capped mountains, rivers flowing downstream, and amazing house boats make it a perfect holiday destination. River Jhelum adds to the beauty of Srinagar. There are lots of magnetizing attractions for tourist to visit. Starting from the world renowned Dal Lake with picturesque scenery in the backdrop. Explore the beauty with wonderful shakira rides in dal lake. You can also visit the great Mughal gardens Chashmashahi Garden, Nishat Garden, and Shalimar Garden is famous for its magnificent beauty.</p>
+      <h4>Package Details</h4><hr/>
+      <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+             <div class="col-md-4"><b>Departure City</b></div>
+             <div class="col-md-8">{{data.sourceCity | splitByName}}</div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4"><b>Days</b></div>
+            <div class="col-md-8">{{data.days}}</div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4"><b>Nights</b></div>
+            <div class="col-md-8">{{data.nights}}</div>
+        </div>
+      </div>
+      <div class="col-md-12">
+          <div class="row">  
+            <div class="col-md-4"><b>Rate</b> <small>(Per Person on twin sharing)</small></div>
+            <div class="col-md-8">{{data.rate}} /-</div>
+        </div>
+      </div>
+      </div>
     </div>
      <!--Tab5-->
-    <div id="menu1" ng-show="isSet(5)" class="tab-pane fade in active">
-      <h4>Menu 1</h4><hr/>
-      <p>Srinagar lies in the heart of the Kashmir valley and is the capital city of Jammu and Kashmir state of India. It is even acknowledged as paradise on earth with its pristine beauty. One can relax in this place with fresh air, snow capped mountains, rivers flowing downstream, and amazing house boats make it a perfect holiday destination. River Jhelum adds to the beauty of Srinagar. There are lots of magnetizing attractions for tourist to visit. Starting from the world renowned Dal Lake with picturesque scenery in the backdrop. Explore the beauty with wonderful shakira rides in dal lake. You can also visit the great Mughal gardens Chashmashahi Garden, Nishat Garden, and Shalimar Garden is famous for its magnificent beauty.</p>
+    <div id="menu4" ng-show="isSet(5)" class="tab-pane fade in active">
+      <h4>Policies</h4><hr/>
+        <div class="tabpaneDiv">
+            <b>Payment Policy</b>
+            <p>{{data.policies[0].paymentPolicy}}</p>
+        </div>
+        <div class="tabpaneDiv">
+            <b>Cancellation Policy</b>
+            <p>{{data.policies[0].cancellationPolicy}}</p>
+        </div>
+        <div class="tabpaneDiv">
+            <b>Other Policy</b>
+            <p>{{data.policies[0].otherPolicy}}</p>
+        </div> 
     </div>
   </div>
 
@@ -113,7 +149,7 @@
                             <div class="widget widget-contact"> 
                                 <h3 class="widget-title">Inclusions</h3>
                                 <span ng-repeat="x in data.selectedInclusion">
-                                <img src="http://localhost:3001/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
+                                <img src="https://admin-travelbasera.herokuapp.com/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
                                 </span>
                             </div>
                             <div class="widget widget-contact"> 

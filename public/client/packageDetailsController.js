@@ -1,8 +1,9 @@
 'use Strict';
 
-app.controller('packageDetailController', function($scope, $http,constant, $location,$routeParams, $sce){
+app.controller('packageDetailController', function($scope, $http,constant, $location,$routeParams, $sce,$anchorScroll){
  	
  	$scope.tab = 1;
+  $anchorScroll();
 showLoader();
     $scope.setTab = function(newTab){
       $scope.tab = newTab;

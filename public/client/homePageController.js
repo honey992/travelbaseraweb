@@ -1,11 +1,10 @@
 'use Strict';
 
-app.controller('homeController', function($scope, $http,constant){
+app.controller('homeController', function($scope, $http,constant,$location){
  
-
   $scope.banners = function(){
     $http.get(constant.BASE_URL+constant.BANNAR_URL).then(function success(res){
-               $scope.bannersList = res.data.data;
+               $scope.bannerImages = res.data.data;
             }, function errorCallback(err){
                 $scope.errorPop = true;
                 $scope.successPop = false;
@@ -13,14 +12,7 @@ app.controller('homeController', function($scope, $http,constant){
       });
   };
   $scope.banners();
-  
-$scope.bannerImages = [
-                        {imageUrl:"https://newevolutiondesigns.com/images/freebies/city-wallpaper-5.jpg"},
-                        {imageUrl:"https://newevolutiondesigns.com/images/freebies/city-wallpaper-preview-1.jpg"},
-                        {imageUrl:"dist/images/hero-image.jpg"}
-                      ];
- 
- $scope.popularData = [];
+   
  $scope.popularPackages = function(){
     $http.get(constant.BASE_URL+constant.POPULAR_PACKAGES).then(function success(res){
                $scope.popular = res.data.data;
@@ -31,7 +23,16 @@ $scope.bannerImages = [
       });
   };
   $scope.popularPackages(); 
-
+ $scope.categories = function(){
+    $http.get(constant.BASE_URL+constant.CATEGORIES).then(function success(res){
+               $scope.categories = res.data.data;
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+  $scope.categories();
 $scope.testimonials = function(){
     $http.get(constant.BASE_URL+constant.TESTIMONIALS).then(function success(res){
                $scope.testimonialsData = res.data.data;
@@ -42,6 +43,11 @@ $scope.testimonials = function(){
       });
   };
   $scope.testimonials();
+  $scope.redirectToPackageDetails = function(titleName, id){
+    var title = titleName.split(' ').join('-');
+  $location.path('/holiday-details/'+title).replace()
+
+  }
 // $scope.testimonialsData = [{
 // 	image:"dist/images/testimonial-2.jpg",
 // 	reviewer_name:'Kathy R. Burroughs',

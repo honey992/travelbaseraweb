@@ -1,10 +1,9 @@
-
     <!-- /.header wide -->
     <div class="header-banner">
     <div class="thumbnail-carousel">
        <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
       <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
-        <img ng-src="{{item.imageUrl}}" height="500px">
+        <img ng-src="https://admin-travelbasera.herokuapp.com/{{item.imageUrl}}" height="500px" title="{{item.imageTitle}}">
       </div>
     </data-owl-carousel>
     </div>
@@ -61,7 +60,7 @@
                                 <div class="hostel-thumbnail-list">
                                     <!-- hostel thumbnail list -->
                                     <div class="hostel-list-img">
-                                        <a href="hostel-single-page.html"><img ng-src="http://localhost:3001/{{item.mainImage}}"  alt=""></a>
+                                        <a href="javascript:void(0)" ng-click="redirectToPackageDetails(item.title, item._id)"><img ng-src="https://admin-travelbasera.herokuapp.com/{{item.mainImage}}"  alt=""></a>
                                         <div class="popular_Overlay">
                                             <h3 style="color:#fff">Some Title Here</h3>
                                             <p>Let’s imagine for a moment that there is portable version of Photoshop and you actually have it. Right click hover the file</p>
@@ -70,7 +69,7 @@
                                     </div>
                                     <div class="hostel-content">
                                         <div class="hostel-head">
-                                            <h3 class="hostel-title"><a href="/package-detail" class="title">{{item.title}}</a></h3>
+                                            <h3 class="hostel-title"><a href="javascript:void(0)" ng-click="redirectToPackageDetails(item.title, item._id)" class="title">{{item.title}}</a></h3>
                                             <ul style="list-style: none">    
                                                 <li ng-repeat="y in item.highlights" style="font-size: 13px;line-height: 18px">{{y.title}}</li>
                                             </ul> 
@@ -101,18 +100,18 @@
                     </div>
                     <!-- /.section title start-->
                 </div>
-            </div>
+            </div> 
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="destination-grid-box">
                         <!-- destination grid box -->
                         <div class="destination-img"><a href="#"><img src="dist/images/destination-1.jpg" alt="australia" class="img-responsive"></a>
                             <div class="destination-content">
-                                <h2 class="destination-title"><a href="#">Australia</a></h2>
+                                <h2 class="destination-title"><a href="#">{{categories[0].cat_name}}</a></h2>
                             </div>
                         </div>
                         <div class="overlayDest">
-                        <h2  ><a href="#">Australia</a></h2>
+                        <h2  ><a href="#">{{categories[0].cat_name}}</a></h2>
                         <p>Then go back one level into the users folder and paste all the content in your user folder (If your user folder doesn’t exist just create it with the name of your Linux user</p>
                         <a href="#" class="btn btn-default btn-xs">Explore</a>
                         </div>
@@ -245,7 +244,7 @@
                                 <div class="testimonial-block">
                                     <!-- testimonial block -->
                                     <div class="testimonial-user">
-                                        <div class="testimonial-img"><img style="width:80px; height:80px" ng-src="http://localhost:3001/{{item.reviewer_img}}" alt="" class="img-circle"></div>
+                                        <div class="testimonial-img"><img style="width:80px; height:80px" ng-src="https://admin-travelbasera.herokuapp.com/{{item.reviewer_img}}" alt="" class="img-circle"></div>
                                         <div class="testimonial-info">
                                             <h4 class="testimonial-name">{{item.reviewer_name}}</h4>
                                         </div>
