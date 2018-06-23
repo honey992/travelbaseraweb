@@ -16,6 +16,7 @@ app.constant("constant", (function() {
         PACKAGE_DETAILS : 'v1/api/package-details',
         POPULAR_PACKAGES : 'v1/api/isPopularPackages',
         TESTIMONIALS : 'v1/api/testimonials',
-        CATEGORIES : 'v1/api/categories'
+        CATEGORIES : 'v1/api/categories',
+        CONTACT_DETAILS: 'v1/api/contacts'
     }
 })());

@@ -21,6 +21,17 @@ app.controller('headerController', function($scope, $http,constant, $location){
       });
   };
   $scope.getCountryStates();
+
+  $scope.getContactDetails = function(){
+    $http.get(constant.BASE_URL+constant.CONTACT_DETAILS).then(function success(res){  
+               $scope.contactsDetails = res.data.data;  
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+  $scope.getContactDetails();
   
   $scope.redirectToCities = function(country,name, code){ 
     var country = splitByName(country); 

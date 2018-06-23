@@ -20,8 +20,9 @@
             </div>
         </div>
     </div>
+    
     <!-- /.page header -->
-    <div class="content">
+    <div class="content" ng-controller="headerController">
         <!-- content -->
         <div class="content-area">
             <div class="container">
@@ -67,19 +68,15 @@
                         <div class="widget widget-contact">
                             <h3 class="widget-title">Contact Information</h3>
                             <ul class="listnone">
-                                <li><strong>Phone: </strong> 800-123-4567</li>
-                                <li><strong>Email: </strong> info@hostel.com</li>
+                                <li><strong>Phone: </strong> +91-{{contactsDetails.contactno}}</li>
+                                <li><strong>Email: </strong> {{contactsDetails.email}}</li>
                                 <li><strong>Office Hours From:</strong> 9am - 6pm</li>
                             </ul>
                         </div>
                         <div class="widget widget-address">
                             <h3 class="widget-title">Company Info</h3>
                             <address>
-                                <strong>Nearme, Hostel Company LLC.</strong>
-                                <br> 869 Valley Street,
-                                <br>Suite 900
-                                <br> Camden,
-                                <br> NJ 08102
+                                <strong>{{contactsDetails.address}}</strong> 
                             </address>
                         </div>
                     </div>

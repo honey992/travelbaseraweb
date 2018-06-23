@@ -37,14 +37,14 @@
     <![endif]-->
 </head>
 
-<body>
+<body ng-controller="headerController" > 
     <div class="header-wide">
         <!-- header wide -->
         <div class="header-top">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 hidden-xs">
-                        <p class="welcome-text">Contact us@ +91-999999999</p>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 hidden-xs"> 
+                        <p class="welcome-text">Contact us@ +91-{{contactsDetails.contactno}}</p> 
                     </div>
                     <div class="col-lg-8 col-md-6 col-sm-6 col-xs-12">
                         <div class="header-right">
@@ -61,7 +61,7 @@
             background-color: #fff
         }
     </style>
-    <div class="header" ng-controller="headerController" ng-class="{'headerForPackDetail':showHeader}">
+    <div class="header" ng-class="{'headerForPackDetail':showHeader}">
             <!-- header -->
             <div class="container-fluid">
                 <div class="row">
