@@ -3,7 +3,7 @@
     <div class="thumbnail-carousel">
        <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
       <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
-        <img ng-src="http://localhost:3001/{{item.imageUrl}}" height="600px" title="{{item.imageTitle}}">
+        <img ng-src="https://admin-travelbasera.herokuapp.com/{{item.imageUrl}}" height="600px" title="{{item.imageTitle}}">
       </div>
     </data-owl-carousel>
     </div>
@@ -60,7 +60,7 @@
                                 <div class="hostel-thumbnail-list">
                                     <!-- hostel thumbnail list -->
                                     <div class="hostel-list-img">
-                                        <a href="javascript:void(0)" ng-click="redirectToPackageDetails(item.title, item._id)"><img ng-src="http://localhost:3001/{{item.mainImage}}"  alt=""></a>
+                                        <a href="javascript:void(0)" ng-click="redirectToPackageDetails(item.title, item._id)"><img ng-src="https://admin-travelbasera.herokuapp.com/{{item.mainImage}}"  alt=""></a>
                                         <div class="popular_Overlay">
                                             <h3 style="color:#fff">Some Title Here</h3>
                                             <p>Let’s imagine for a moment that there is portable version of Photoshop and you actually have it. Right click hover the file</p>
@@ -244,7 +244,7 @@
                                 <div class="testimonial-block">
                                     <!-- testimonial block -->
                                     <div class="testimonial-user">
-                                        <div class="testimonial-img"><img style="width:80px; height:80px" ng-src="http://localhost:3001/{{item.reviewer_img}}" alt="" class="img-circle"></div>
+                                        <div class="testimonial-img"><img style="width:80px; height:80px" ng-src="https://admin-travelbasera.herokuapp.com/{{item.reviewer_img}}" alt="" class="img-circle"></div>
                                         <div class="testimonial-info">
                                             <h4 class="testimonial-name">{{item.reviewer_name}}</h4>
                                         </div>
