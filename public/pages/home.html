@@ -3,7 +3,7 @@
     <div class="thumbnail-carousel">
        <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
       <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
-        <img ng-src="https://admin-travelbasera.herokuapp.com/{{item.imageUrl}}" height="600px" title="{{item.imageTitle}}">
+        <img ng-src="http://localhost:3001/{{item.imageUrl}}" height="600px" title="{{item.imageTitle}}">
       </div>
     </data-owl-carousel>
     </div>
@@ -62,7 +62,7 @@
                                 <div class="hostel-thumbnail-list">
                                     <!-- hostel thumbnail list -->
                                     <div class="hostel-list-img">
-                                        <a href="javascript:void(0)" ng-click="redirectToPackageDetails(item.title, item._id)"><img ng-src="https://admin-travelbasera.herokuapp.com/{{item.mainImage}}"  alt=""></a>
+                                        <a href="javascript:void(0)" ng-click="redirectToPackageDetails(item.title, item._id)"><img ng-src="http://localhost:3001/{{item.mainImage}}"  alt=""></a>
                                         <div class="popular_Overlay">
                                              
                                         </div>
@@ -105,7 +105,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="destination-grid-box">
                         <!-- destination grid box -->
-                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[0].cat_name, categories[0].cat_code)"><img src="https://admin-travelbasera.herokuapp.com/{{categories[0].cat_image}}" alt="australia" class="img-responsive"></a>
+                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[0].cat_name, categories[0].cat_code)"><img src="http://localhost:3001/{{categories[0].cat_image}}" alt="australia" class="img-responsive"></a>
                             <div class="destination-content">
                                 <h2 class="destination-title"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[0].cat_name, categories[0].cat_code)">{{categories[0].cat_name}}</a></h2>
                             </div>
@@ -121,7 +121,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="destination-grid-box">
                         <!-- destination grid box -->
-                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[1].cat_name, categories[1].cat_code)"><img src="https://admin-travelbasera.herokuapp.com/{{categories[1].cat_image}}" alt="australia" class="img-responsive"></a>
+                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[1].cat_name, categories[1].cat_code)"><img src="http://localhost:3001/{{categories[1].cat_image}}" alt="australia" class="img-responsive"></a>
                             <div class="destination-content">
                                 <h2 class="destination-title"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[1].cat_name, categories[1].cat_code)">{{categories[1].cat_name}}</a></h2></div>
                         </div>
@@ -136,7 +136,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="destination-grid-box">
                         <!-- destination grid box -->
-                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[2].cat_name, categories[2].cat_code)"><img src="https://admin-travelbasera.herokuapp.com/{{categories[2].cat_image}}" alt="australia" class="img-responsive"></a>
+                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[2].cat_name, categories[2].cat_code)"><img src="http://localhost:3001/{{categories[2].cat_image}}" alt="australia" class="img-responsive"></a>
                             <div class="destination-content">
                                 <h2 class="destination-title"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[2].cat_name, categories[2].cat_code)">{{categories[2].cat_name}}</a></h2></div>
                         </div>
@@ -153,7 +153,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="destination-grid-box landscape">
                         <!-- destination grid box -->
-                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[3].cat_name, categories[3].cat_code)"><img src="https://admin-travelbasera.herokuapp.com/{{categories[3].cat_image}}" alt="australia" class="img-responsive"></a>
+                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[3].cat_name, categories[3].cat_code)"><img src="http://localhost:3001/{{categories[3].cat_image}}" alt="australia" class="img-responsive"></a>
                             <div class="destination-content">
                                 <h2 class="destination-title"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[3].cat_name, categories[3].cat_code)">{{categories[3].cat_name}}</a></h2></div>
                         </div>
@@ -168,7 +168,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="destination-grid-box landscape">
                         <!-- destination grid box -->
-                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[4].cat_name, categories[4].cat_code)"><img src="https://admin-travelbasera.herokuapp.com/{{categories[4].cat_image}}" alt="australia" class="img-responsive"></a>
+                        <div class="destination-img"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[4].cat_name, categories[4].cat_code)"><img src="http://localhost:3001/{{categories[4].cat_image}}" alt="australia" class="img-responsive"></a>
                             <div class="destination-content">
                                 <h2 class="destination-title"><a href="javascript:void(0)" ng-click="redirectToPackages(categories[4].cat_name, categories[4].cat_code)">{{categories[4].cat_name}}</a></h2></div>
                         </div>
@@ -244,7 +244,7 @@
                                 <div class="testimonial-block">
                                     <!-- testimonial block -->
                                     <div class="testimonial-user">
-                                        <div class="testimonial-img"><img style="width:80px; height:80px" ng-src="https://admin-travelbasera.herokuapp.com/{{item.reviewer_img}}" alt="" class="img-circle"></div>
+                                        <div class="testimonial-img"><img style="width:80px; height:80px" ng-src="http://localhost:3001/{{item.reviewer_img}}" alt="" class="img-circle"></div>
                                         <div class="testimonial-info">
                                             <h4 class="testimonial-name">{{item.reviewer_name}}</h4>
                                         </div>
