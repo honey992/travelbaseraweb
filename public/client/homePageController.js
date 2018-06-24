@@ -1,6 +1,6 @@
 'use Strict';
 
-app.controller('homeController', function($scope, $http,constant,$location){
+app.controller('homeController', function($scope, $http,constant,$location, $sce){
  
   $scope.banners = function(){
     $http.get(constant.BASE_URL+constant.BANNAR_URL).then(function success(res){
@@ -45,20 +45,30 @@ $scope.testimonials = function(){
   $scope.testimonials();
   $scope.redirectToPackageDetails = function(titleName, id){
     var title = titleName.split(' ').join('-');
-  $location.path('/holiday-details/'+title).replace()
+  $location.path('/holiday-details/'+title)
 
   }
-// $scope.testimonialsData = [{
-// 	image:"dist/images/testimonial-2.jpg",
-// 	reviewer_name:'Kathy R. Burroughs',
-// 	title:'Had an amazing time and very good !!',
-// 	content:'“Elementum naon tellus sit amet ultricies. In nec elit velit. Nullam luctus efficitur urna, a accumsan nunc varius nec.”'
-// },{
-// 	image:"dist/images/testimonial-1.jpg",
-// 	reviewer_name:'Kathy R. Burroughs',
-// 	title:'Had an amazing time and very good !!',
-// 	content:'“Elementum naon tellus sit amet ultricies. In nec elit velit. Nullam luctus efficitur urna, a accumsan nunc varius nec.”'
-// }];
+
+  $scope.redirectToPackages = function(name, code){
+   $location.path('/package-category/'+code+'-'+name)
+  }
+ 
+ $scope.aboutus = function(){
+    $http.get(constant.BASE_URL+constant.ABOUT_US).then(function success(res){
+               $scope.aboutuse = res.data.data;
+               $scope.about_data = $sce.trustAsHtml(res.data.data.description);
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+   $scope.aboutus(); 
+
+$scope.searchPackage  = function(search){ 
+  var searchUrl = decodeURIComponent('/search?source='+search.source+'&destination='+search.destination+'&category='+search.category);
+  $location.url(searchUrl);
+}
 
 	    $scope.bannerOptions = {
             stopOnHover: true,
@@ -94,4 +104,6 @@ $scope.testimonials = function(){
 		    nav:true,
 		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
         };
+
+   
 })

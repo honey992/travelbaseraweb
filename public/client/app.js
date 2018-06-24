@@ -13,7 +13,7 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
             controller: "homeController"
         }).when("/contact-us", {
             templateUrl: "/pages/contact-us-page.html",
-            controller: "homeController"
+            controller: "otherController"
         }).when("/holidays/:country/:state/:cityId", {
             templateUrl: "/pages/package-view.html",
             controller: "packageController"
@@ -29,6 +29,18 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         }).when("/holidays/:country/cities", {
             templateUrl: "/pages/cities.html",
             controller: "citiesController"
+        }).when("/package-category/:catId", {
+            templateUrl: "/pages/packageByCategory.html",
+            controller: "packByCategoryController"
+        }).when("/career", {
+            templateUrl: "/pages/careers.html",
+            controller: "otherController"
+        }).when("/faq", {
+            templateUrl: "/pages/faq.html",
+            controller: "otherController"
+        }).when("/search", {
+            templateUrl: "/pages/search.html",
+            controller: "searchController"
         })
         .otherwise({
             redirectTo: "/"

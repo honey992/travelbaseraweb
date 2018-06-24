@@ -70,13 +70,13 @@
                             <a href="/">  <img src="dist/images/logo.png" alt=""></a>
                         </div>
                     </div>
-                      <div class="col-lg-8 col-md-9 col-sm-12 col-xs-12">
+                      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                         <div class="header-block">
                             <div id="navigation">
                                 <!-- navigation -->
                                 <ul>
                                    <li><a href="/">Home</a></li> 
-                                    <li><a href="/about-us">About</a></li>
+                                    <li><a href="#!/about-us">About</a></li>
                                     <li><a href="javascript:void(0)">Destinations</a>
                                        <ul>
                                             <li ng-repeat="x in destinations_Menu"><a href="javascript:void(0)">{{x._id | splitByName}}</a>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
                         <div class="header-block header-action hidden-xs hidden-sm">
-                            <a href="hostel-list-view.html" class="btn btn-default"><i class="fa fa-newspaper-o"></i>&nbsp;Get Qoutes</a>
+                            <a href="#!/contact-us" class="btn btn-default"><i class="fa fa-newspaper-o"></i>&nbsp;Get In Touch</a>
                         </div>
                     </div>
                 </div>
@@ -111,31 +111,27 @@
 
     <div ng-view ></div>
 
- 
+ <div ng-controller="headerController">
     <!-- /.newsletter -->
-    <div class="footer">
+    <div class="footer" >
         <!-- footer -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
                     <div class="widget-footer">
                         <h3 class="widget-title">About TravelBasera</h3>
-                        <p>In et congue nibh. Maecenas leo enim, lobortis non quam et, interdum malesuada risus. Nunc a pharetra ligula, nec tincidunt est. Vestibulum sed facilisis nibh.
-                        </p>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestad iaculis pellentesque neque, sed dapibursus porta ut nibh.</p>
+                        <p ng-bind-html="about_data"></p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                     <div class="widget-footer">
                         <h3 class="widget-title">Information</h3>
                         <ul class="listnone">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">How it works</a></li>
-                            <li><a href="#">Behind the hostel</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Terms and Conditions</a></li>
-                            <li><a href="#">Become a partner</a></li>
-                            <li><a href="#">Privacy & Cookies Policy</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('ab')">About</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('hiw')">How it works</a></li> 
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('ca')">Careers</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('tc')">Terms and Conditions</a></li> 
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('pcp')">Privacy & Cookies Policy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -143,12 +139,11 @@
                     <div class="widget-footer">
                         <h3 class="widget-title">Quick Links</h3>
                         <ul class="listnone">
-                            <li><a href="#">Worldwide</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">City Guide</a></li>
-                            <li><a href="#">Hostel Singup</a></li>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Register</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('ww')">Worldwide</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('bl')">Blog</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('cg')">City Guide</a></li> 
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('lo')">Login</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('re')">Register</a></li>
                         </ul>
                     </div>
                 </div>
@@ -156,32 +151,29 @@
                     <div class="widget-footer">
                         <h3 class="widget-title">Customer Support</h3>
                         <ul class="listnone">
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Help Center</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Chat</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('fa')">FAQ</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('hc')">Help Center</a></li>
+                            <li><a href="javascript:void(0)" ng-click="changeUrl('cu')">Contact us</a></li> 
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   
-</div>
+    
     <!-- /.footer -->
     <div class="tiny-footer">
         <!-- tiny footer -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <div class="footer-social">
+                    <div class="footer-social"> 
                         <!-- footer social -->
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
+                            <li ng-if="contactsDetails.fblink"><a href="{{contactsDetails.fblink}}"><i class="fa fa-facebook-square"></i></a></li>
+                            <li ng-if="contactsDetails.twrlink"><a href="{{contactsDetails.twrlink}}"><i class="fa fa-twitter-square"></i></a></li>
+                            <li ng-if="contactsDetails.glink"><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+                            <li ng-if="contactsDetails.instId"><a href="{{contactsDetails.instId}}"><i class="fa fa-instagram"></i></a></li> 
                         </ul>
                     </div>
                     <!-- /.footer social -->
@@ -191,6 +183,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 <div id="loader">
 <img src="dist/images/loader.gif" />
@@ -231,6 +224,9 @@
        <script src="client/headerController.js"></script>
        <script src="client/citiesController.js"></script>
        <script src="client/packageController.js"></script>
+       <script src="client/packageByCategoryController.js"></script>
+        <script src="client/otherController.js"></script>
+        <script src="client/searchController.js"></script>
        <script>
         var loader = document.getElementById('loader');
        function showLoader(){
