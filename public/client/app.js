@@ -41,6 +41,12 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         }).when("/search", {
             templateUrl: "/pages/search.html",
             controller: "searchController"
+        }).when("/terms-and-condition", {
+            templateUrl: "/pages/termCondition.html",
+            controller: "otherController"
+        }).when("/book-now", {
+            templateUrl: "/pages/book-now.html",
+            controller: "otherController"
         })
         .otherwise({
             redirectTo: "/"

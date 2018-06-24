@@ -44,17 +44,31 @@ app.controller('headerController', function($scope, $http,constant, $location,$s
   };
    $scope.aboutus();
   
+$scope.categories = function(){
+    $http.get(constant.BASE_URL+constant.CATEGORIES).then(function success(res){
+               $scope.categories = res.data.data;
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+  $scope.categories();
+  
   $scope.redirectToCities = function(country,name, code){ 
     var country = splitByName(country); 
     $location.path('/holidays/'+country.toLowerCase()+'/cities').search({id: code+'-'+name}).replace()
   };
+  $scope.redirectToPackages = function(name, code){
+    $location.path('/package-category/'+code+'-'+name)
+  }
   $scope.changeUrl = function(name){
     var obj='';
     if(name == 'ab') obj = '/about-us';
     else if(name == 'ca') obj = '/career';
     else if(name == 'fa') obj = '/faq';
     else if(name == 'cu') obj = '/contact-us';
-    else if(name == 'ca') obj = '/career';
+    else if(name == 'tc') obj = '/terms-and-condition';
 
     $location.path(obj); 
   }

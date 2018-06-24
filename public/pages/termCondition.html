@@ -5,13 +5,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <!-- page title -->
-                    <h1 class="page-title">Faq</h1>
+                    <h1 class="page-title">T&C</h1>
                 </div>
                 <!-- /.page title -->
                 
             </div>
         </div>
-    </div>
+    </div> 
     <!-- /.page header -->
     <div class="content">
         <!-- content -->
@@ -20,10 +20,8 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="well-box">
-                            <h2>FAQs</h2> 
-                           <ol>
-                            <li ng-repeat="x in faqList"><b>{{x.question}}</b><br />{{x.answer}}</li>
-                           </ol>
+                            <h2>Terms & Conditions</h2> 
+                           <div ng-bind-html="data"></div>
                              
                         </div>
                     </div> 

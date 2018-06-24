@@ -86,14 +86,12 @@
                                             </li>
                                         </ul>
                                     </li>
-                                   <!-- <li><a href="#">International </a>
+
+                                   <li><a href="javascript:void(0)">Categories </a>
                                         <ul>
-                                            <li><a href="blog-page.html">Blog Listing</a></li>
-                                            <li><a href="blog-listing-3-column.html">Blog Listing 3 Column</a></li>
-                                            <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                            <li><a href="blog-single.html">Blog Single</a></li>
+                                            <li ng-repeat="x in categories" ng-click="redirectToPackages(x.cat_name, x.cat_code)"><a href="javascript:void(0)">{{x.cat_name}}</a></li> 
                                         </ul>
-                                    </li>  -->
+                                    </li> 
                                 </ul>
                             </div>
                             <!-- /.navigation -->

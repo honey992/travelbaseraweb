@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <!-- page title -->
-                    <h1 class="page-title">Faq</h1>
+                    <h1 class="page-title">Book Now</h1>
                 </div>
                 <!-- /.page title -->
                 
@@ -20,11 +20,14 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="well-box">
-                            <h2>FAQs</h2> 
-                           <ol>
-                            <li ng-repeat="x in faqList"><b>{{x.question}}</b><br />{{x.answer}}</li>
-                           </ol>
                              
+                            <h4>To book the package please contact below details.  </h4>
+
+                              <ul class="listnone">
+                                <li><strong>Phone: </strong> +91-{{contactsDetails.contactno}}</li>
+                                <li><strong>Email: </strong> {{contactsDetails.email}}</li> 
+                                <li> <strong>Address:</strong> {{contactsDetails.address}}</li>
+                            </ul>
                         </div>
                     </div> 
                 </div>

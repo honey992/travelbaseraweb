@@ -30,9 +30,7 @@
                  <i class="fa fa-map-marker" style=" position: absolute;left: 15px; top: 23px; color:#fff"></i>
                 <input type="text" class="form-control" placeholder="To" ng-model="search.destination" required />
                  <i class="fa fa-location-arrow" style="position: absolute;left:355px;top: 23px;color:#fff"></i>
-                <select class="form-control" ng-model="search.category"  >
-                    <option ng-repeat="x in categories" value="{{x.cat_code}}-{{x.cat_name}}" >{{x.cat_name}}</option>
-                </select>
+                 <input type="date" class="form-control" placeholder="date" ng-model="search.date" required />
                 <i class="fa fa-calendar" style="position: absolute;right: 392px;top: 23px;color:#fff"></i>
                 <button class="btn btn-default" ng-click="searchPackage(search)">Find</button>
                 
@@ -66,9 +64,7 @@
                                     <div class="hostel-list-img">
                                         <a href="javascript:void(0)" ng-click="redirectToPackageDetails(item.title, item._id)"><img ng-src="https://admin-travelbasera.herokuapp.com/{{item.mainImage}}"  alt=""></a>
                                         <div class="popular_Overlay">
-                                            <h3 style="color:#fff">Some Title Here</h3>
-                                            <p>Let’s imagine for a moment that there is portable version of Photoshop and you actually have it. Right click hover the file</p>
-                                            <i class="fa fa-bullhorn"></i> &nbsp; <i class="fa fa-briefcase"></i>
+                                             
                                         </div>
                                     </div>
                                     <div class="hostel-content">

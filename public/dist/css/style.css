@@ -693,7 +693,7 @@ input[type=radio] {
 }
 .header { 
     position: absolute;
-    z-index:9999;
+    z-index:99;
     width:100%;
 }
 .logo {}
@@ -847,7 +847,7 @@ input[type=radio] {
     height: 44px;
 }
 #navigation ul ul ul {
-    margin-left: -100%;
+    margin-left: 100%;
     top: 0;
 }
 #navigation.align-right ul ul ul {
@@ -3271,7 +3271,7 @@ background: #0069ff;
     width: 100%; 
     position: absolute;
     top: 0px;
-    z-index: 999;
+    z-index: 9;
     bottom: 0;
     left: 0;
 }

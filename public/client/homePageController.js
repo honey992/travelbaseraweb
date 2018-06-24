@@ -1,6 +1,6 @@
 'use Strict';
 
-app.controller('homeController', function($scope, $http,constant,$location, $sce){
+app.controller('homeController', function($scope, $http,constant,$location, $sce,$filter){
  
   $scope.banners = function(){
     $http.get(constant.BASE_URL+constant.BANNAR_URL).then(function success(res){
@@ -33,6 +33,7 @@ app.controller('homeController', function($scope, $http,constant,$location, $sce
       });
   };
   $scope.categories();
+
    function createArray(num){
     var ar  = [];
     for(var i = 0;i<num;i++){
@@ -77,7 +78,9 @@ $scope.testimonials = function(){
    $scope.aboutus(); 
 
 $scope.searchPackage  = function(search){ 
-  var searchUrl = decodeURIComponent('/search?source='+search.source+'&destination='+search.destination+'&category='+search.category);
+  var date = $filter('date')(search.date, 'dd-MM-yyyy');
+  alert(date)
+  var searchUrl = decodeURIComponent('/search?source='+search.source+'&destination='+search.destination+'&date='+date);
   $location.url(searchUrl);
 }
 

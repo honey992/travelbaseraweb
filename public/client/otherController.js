@@ -1,6 +1,6 @@
 'use Strict';
 
-app.controller('otherController', function($scope, $http,constant,$location, $sce,$anchorScroll){
+app.controller('otherController', function($scope, $http,constant,$location, $sce,$anchorScroll,$routeParams){
  $anchorScroll();
  
  $scope.categories = function(){
@@ -33,7 +33,51 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
                 $scope.errorMsg = err.data.message;
       });
   };
-   $scope.aboutus(); 
+   $scope.aboutus();
+
+    $scope.getFaqs = function(){
+    $http.get(constant.BASE_URL+constant.FAQ_URL).then(function success(res){
+               $scope.faqList = res.data.data; 
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+   $scope.getFaqs();
+
+    $scope.getTermCondition = function(){
+    $http.get(constant.BASE_URL+constant.TERMCONDITION_URL).then(function success(res){
+               $scope.termCondList = res.data.data;
+              $scope.data = $sce.trustAsHtml($scope.termCondList.description); 
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+   $scope.getTermCondition();
+
+   $scope.getContactDetails = function(){
+    $http.get(constant.BASE_URL+constant.CONTACT_DETAILS).then(function success(res){  
+               $scope.contactsDetails = res.data.data;  
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+  $scope.getContactDetails();  
+  $scope.getPackageByCategories = function(){
+    $http.get(constant.BASE_URL+constant.PACKAGE_CATEGORIES_URL+'/'+$routeParams.id).then(function success(res){  
+               $scope.packByCatdata = res.data.data;  
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+  $scope.getPackageByCategories(); 
 
    
 })
