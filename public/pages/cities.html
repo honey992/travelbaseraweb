@@ -22,10 +22,10 @@
                             <div class="row">
                             <h3>Cities in {{queryString.id | splitByName}}</h3>
                             <br />
-                                <p>Undoubtedly the best  trip for any first time traveler to India with lack of time which shows you the best during the short period ,trip take you back to trough time when you visit the capital of India which is ruined 7 times and still tells you lots of stories ,moving further to Agra to witness monument of eternal love The Taj Mahal ,and finally showing you the capital of Princely state of Rajasthan</p>
+                                <p>{{citiesList.stateDesc}}</p>
 
-    <div class="row" ng-if="citiesList.length"> 
-                            <div class="col-md-3" ng-repeat="x in citiesList"> 
+    <div class="row" ng-if="citiesList.result.length"> 
+                            <div class="col-md-3" ng-repeat="x in citiesList.result"> 
                                 <div class="hostel-thumbnail-list">
                                     <!-- hostel thumbnail list -->
                                     <div class="hostel-list-img">
@@ -37,7 +37,7 @@
                                 </div>
                             </div> 
     </div>
-    <div ng-if="!citiesList.length" class="alert alert-danger">
+    <div ng-if="!citiesList.result.length" class="alert alert-danger">
         No Results Found.
     </div>
                             </div>

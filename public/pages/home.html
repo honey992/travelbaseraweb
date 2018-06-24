@@ -255,8 +255,8 @@
                                     </div>
                                     <div class="testimonial-content">
                                         <h4>{{item.reviewer_title}}</h4>
-                                        <p class="testimonial-text">{{item.reviewer_desc}}</p>
-                                        <span class="rate"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </span>
+                                        <p class="testimonial-text">{{item.reviewer_desc}}</p> 
+                                        <span class="rate" ng-repeat="x in item.ratingArray"><i class="fa fa-star"></i> </span>
                                     </div>
                             </div>
                                 <!-- /.hostel thumbnail list -->

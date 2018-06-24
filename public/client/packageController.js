@@ -1,7 +1,7 @@
 'use Strict';
 
 app.controller('packageController', function($scope, $http,constant, $location,$routeParams){
- 
+ $scope.cityC = $routeParams.cityId
   $scope.getCountryStates = function(){
     $http.get(constant.BASE_URL+constant.PACKAGESBYCITY+'/'+$routeParams.cityId).then(function success(res){
                $scope.data = res.data.data; 

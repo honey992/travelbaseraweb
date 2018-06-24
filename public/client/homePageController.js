@@ -33,9 +33,19 @@ app.controller('homeController', function($scope, $http,constant,$location, $sce
       });
   };
   $scope.categories();
+   function createArray(num){
+    var ar  = [];
+    for(var i = 0;i<num;i++){
+      ar.push(i);
+    }
+    return ar;; 
+  }
 $scope.testimonials = function(){
     $http.get(constant.BASE_URL+constant.TESTIMONIALS).then(function success(res){
                $scope.testimonialsData = res.data.data;
+               $scope.testimonialsData.forEach(function(o){
+                  o.ratingArray =  createArray(o.reviewer_rating);
+               });  
             }, function errorCallback(err){
                 $scope.errorPop = true;
                 $scope.successPop = false;
@@ -43,6 +53,7 @@ $scope.testimonials = function(){
       });
   };
   $scope.testimonials();
+
   $scope.redirectToPackageDetails = function(titleName, id){
     var title = titleName.split(' ').join('-');
   $location.path('/holiday-details/'+title)
