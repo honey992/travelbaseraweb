@@ -77,6 +77,17 @@ $scope.testimonials = function(){
   };
    $scope.aboutus(); 
 
+ $scope.getDiscountPackages = function(){
+    $http.get(constant.BASE_URL+constant.DISCOUNTED_URL).then(function success(res){
+               $scope.discountPackages = res.data.data;
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+  $scope.getDiscountPackages();
+
 $scope.searchPackage  = function(search){ 
   var date = $filter('date')(search.date, 'dd-MM-yyyy');
   alert(date)
@@ -117,6 +128,18 @@ $scope.searchPackage  = function(search){
 		    Item_Width : 100,
 		    nav:true,
 		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+        };
+
+        $scope.discountSection = {
+            stopOnHover: true, 
+            items: 2,
+            loop:true,
+        margin:0,
+        autoplay:true,
+        autoplayTimeout:5000,
+        Item_Width : 100,
+        nav:true,
+        navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
         };
 
    

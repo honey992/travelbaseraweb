@@ -15,12 +15,16 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
   $scope.categories();  
   $scope.redirectToPackageDetails = function(titleName, id){
     var title = titleName.split(' ').join('-');
-  $location.path('/holiday-details/'+title).replace()
+    $location.path('/holiday-details/'+title).replace()
 
   }
 
   $scope.redirectToPackages = function(name, code){
-   $location.path('/package-category/'+code+'-'+name)
+    $location.path('/package-category/'+code+'-'+name)
+  }
+
+  $scope.redirectToBookNow = function(){ 
+    $location.path('/book-now')
   }
  
  $scope.aboutus = function(){
@@ -77,7 +81,9 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
                 $scope.errorMsg = err.data.message;
       });
   };
-  $scope.getPackageByCategories(); 
+  $scope.getPackageByCategories();  
+
+  
 
    
 })

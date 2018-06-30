@@ -1354,6 +1354,7 @@ Homepage-2
     color: #fff;
     font-weight: 500;
     font-size: 52px;
+    text-shadow: 1px 1px 1px #353535;
 }
 .search-head p {
     color: #d7dee0;
@@ -1512,10 +1513,14 @@ Homepage-2
     overflow: hidden;
     border-radius: 4px 4px 0px 0px;
     position: relative;
+    max-height: 240px;
+    height:240px;
 }
 .hostel-list-img img {
     border-radius: 4px 4px 0px 0px;
     width: 100%;
+    height:100%;
+    object-fit: cover
 }
 .hostel-wishlist {
     position: absolute;
@@ -1625,6 +1630,7 @@ Homepage-2
     border-radius: 4px;
     width: 100%;
     height:360px;
+    object-fit: cover
 }
 .landscape, .landscape>.destination-img, .landscape>.destination-img img{
     height:270px;
@@ -3144,7 +3150,7 @@ a img.aligncenter {
 #navigation ul{float:right !important;}
 
 .overlayDest, .popular_Overlay{
-       text-shadow: 1px 1px 0px #0000007a;
+        text-shadow: 1px 1px 0px #0000007a;
     color: #fff;
     background: #000000a8;
     border-radius: 4px;
@@ -3161,6 +3167,38 @@ a img.aligncenter {
 .overlayDest h2 a{
     color: #d7b469
 }
+.discount_Overlay{
+     text-shadow: 1px 1px 0px #0000007a;
+    color: #fff;
+    background: #00000061;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    padding: 20px; 
+    transition: all 0.5s ease
+     
+    
+}
+.offSpan{
+    color: #fcfbf8;
+    float: right;
+    width: 70px;
+    height: 70px;
+    font-size: 22px;
+    background: #1b75fa;
+    border-radius: 50%;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    text-shadow: none;
+}
+.discountContent{
+    position: absolute;bottom:20px
+}
+.discountContent h4, .discountContent h3{margin-bottom:0px;}
+.discount_Overlay h1, .discount_Overlay h2, .discount_Overlay h3,.discount_Overlay h4,.discount_Overlay  p{color:#fff !important;}
 .destination-grid-box:hover .overlayDest, .hostel-thumbnail-list:hover .popular_Overlay{
     opacity: 1;
          
@@ -3280,3 +3318,10 @@ background: #0069ff;
     }
 
 .search-box option{color:#000;}
+
+.owl-carousel .owl-item img{
+        display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}

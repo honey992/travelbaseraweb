@@ -4,8 +4,8 @@ app.constant("constant", (function() {
     return {
 
 
-         BASE_URL: window.location.protocol + '//' + window.location.hostname+':3001/',       //This is base url for HTTP POST, GET, PUT, DELETE Methods
-       //BASE_URL: 'https://admin-travelbasera.herokuapp.com/',   
+         //BASE_URL: window.location.protocol + '//' + window.location.hostname+':3001/',       //This is base url for HTTP POST, GET, PUT, DELETE Methods
+         BASE_URL: 'http://13.127.127.33/',   
         SECOND_URL: window.location.protocol + '//' + window.location.hostname + '/' ,      //This is second url for HTTP POST, GET, PUT, DELETE Methods
 
         
@@ -23,6 +23,7 @@ app.constant("constant", (function() {
         SEARCH_PACKAGE : 'v1/api/search',
         FAQ_URL : 'v1/api/faq',
         TERMCONDITION_URL : 'v1/api/termAndConditions',
-        PACKAGE_CATEGORIES_URL : 'v1/api/packagesBycategories'
+        PACKAGE_CATEGORIES_URL : 'v1/api/packagesBycategories',
+        DISCOUNTED_URL : 'v1/api/discounted'
     }
 })());

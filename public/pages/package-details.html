@@ -19,7 +19,7 @@
             <div class="thumbnail-carousel">
                <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
               <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
-                <img ng-src="http://localhost:3001/{{item}}" height="400px">
+                <img ng-src="http://13.127.127.33/{{item}}" height="400px">
               </div>
             </data-owl-carousel>
             </div>
@@ -149,14 +149,14 @@
                             <div class="widget widget-contact"> 
                                 <h3 class="widget-title">Inclusions</h3>
                                 <span ng-repeat="x in data.selectedInclusion">
-                                <img src="http://localhost:3001/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
+                                <img src="http://13.127.127.33/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
                                 </span>
                             </div>
                             <div class="widget widget-contact"> 
                                 <h3 class="widget-title">Check Availability</h3>
                                 <button class="btn btn-default   btn-block" data-toggle="modal" data-target="#myModal">Check My Availability Now</button>
                                 <p style="text-align: center;">or</p>
-                                <button class="btn btn-primary   btn-block bookNowBtn" type="submit">Book Now</button>
+                                <button class="btn btn-primary   btn-block bookNowBtn" ng-click="redirectToBookNow()">Book Now</button>
                             </div>
                             <!-- <div class="widget widget-contact box-bg">
                                 <h3 class="widget-title">Contact Owner</h3>
