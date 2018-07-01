@@ -4,7 +4,7 @@ app.controller('packageDetailController', function($scope, $http,constant, $loca
  	
  	$scope.tab = 1;
   $anchorScroll();
-showLoader();
+  showLoader();
     $scope.setTab = function(newTab){
       $scope.tab = newTab;
     };
@@ -40,4 +40,8 @@ $scope.bannerImages = [];
 		    nav:true,
 		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
         };
+
+    $scope.redirectToBookNow = function(){
+      $location.path('/book-now')
+    }
 })

@@ -1,7 +1,7 @@
 'use Strict';
 
-app.controller('homeController', function($scope, $http,constant,$location, $sce,$filter){
- 
+app.controller('homeController', function($scope, $http,constant,$location, $sce,$filter,$anchorScroll){
+ $anchorScroll();
   $scope.banners = function(){
     $http.get(constant.BASE_URL+constant.BANNAR_URL).then(function success(res){
                $scope.bannerImages = res.data.data;
@@ -97,49 +97,89 @@ $scope.searchPackage  = function(search){
 
 	    $scope.bannerOptions = {
             stopOnHover: true,
-            paginationSpeed: 600,
-            items: 1,
+            paginationSpeed: 600, 
             loop:true,
-		    margin:0,
-		    autoplay:true,
-		    autoplayTimeout:3000,
-		    Item_Width : 100,
-		    nav:true,
-		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+    		    margin:0,
+    		    autoplay:true,
+    		    autoplayTimeout:3000,
+    		    Item_Width : 100,
+    		    nav:true,
+    		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+          }
         };
           $scope.popularOptions  = {
-            stopOnHover: true, 
-            items: 3,
+            stopOnHover: true,  
             loop:true,
-		    margin:0,
-		    autoplay:true,
-		    autoplayTimeout:2500,
-		    Item_Width : 100,
-		    nav:true,
-		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+    		    margin:0,
+    		    autoplay:true,
+    		    autoplayTimeout:2500, 
+    		    nav:true,
+    		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:3
+            }
+          }
         };
        $scope.testimonialsOptions  = {
-            stopOnHover: true, 
-            items: 2,
+            stopOnHover: true,  
             loop:true,
-		    margin:0,
-		    autoplay:true,
-		    autoplayTimeout:3000,
-		    Item_Width : 100,
-		    nav:true,
-		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+    		    margin:0,
+    		    autoplay:true,
+    		    autoplayTimeout:3000,
+    		    Item_Width : 100,
+    		    nav:true,
+    		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+              responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:2
+            }
+          }
+
         };
 
         $scope.discountSection = {
             stopOnHover: true, 
-            items: 2,
             loop:true,
-        margin:0,
-        autoplay:true,
-        autoplayTimeout:5000,
-        Item_Width : 100,
-        nav:true,
-        navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            margin:0,
+            autoplay:true,
+            autoplayTimeout:5000,
+            Item_Width : 100,
+            nav:true,
+            navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:2
+            }
+          }
         };
 
    

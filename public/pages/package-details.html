@@ -35,9 +35,9 @@
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 
                 <div class="price-box">
-                                <h2 class="hostel-rate"> 
-                                    <span class="rate-from">From</span><i class="fa fa-rupee"></i> {{data.rate}}
-                                </h2>
+                  <h2 class="hostel-rate"> 
+                      <span class="rate-from">From</span><i class="fa fa-rupee"></i> {{data.rate}}
+                  </h2>
                 </div>
                     
                 </div>
@@ -115,7 +115,7 @@
       </div>
       <div class="col-md-12">
           <div class="row">  
-            <div class="col-md-4"><b>Rate</b> <small>(Per Person on twin sharing)</small></div>
+            <div class="col-md-4"><b>Rate</b> <small>(Per Person)</small></div>
             <div class="col-md-8">{{data.rate}} /-</div>
         </div>
       </div>
@@ -123,27 +123,29 @@
     </div>
      <!--Tab5-->
     <div id="menu4" ng-show="isSet(5)" class="tab-pane fade in active">
-      <h4>Policies</h4><hr/>
+        <h4>Policies</h4><hr/>
         <div class="tabpaneDiv">
             <b>Payment Policy</b>
-            <p>{{data.policies[0].paymentPolicy}}</p>
+            <ul>
+              <li ng-repeat="x in data.policies[0].paymentPolicy">{{x}}</li>
+            </ul> 
         </div>
         <div class="tabpaneDiv">
             <b>Cancellation Policy</b>
-            <p>{{data.policies[0].cancellationPolicy}}</p>
+            <ul>
+            <li ng-repeat="x in data.policies[0].cancellationPolicy">{{x}}</li>
+            </ul> 
         </div>
         <div class="tabpaneDiv">
             <b>Other Policy</b>
-            <p>{{data.policies[0].otherPolicy}}</p>
+            <ul>
+              <li ng-repeat="x in data.policies[0].otherPolicy">{{x}}</li>
+            </ul> 
         </div> 
     </div>
   </div>
 
-     
-
-
-                        
-                    </div>
+    </div>
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="single-page-sidebar">
                             <div class="widget widget-contact"> 
@@ -151,6 +153,10 @@
                                 <span ng-repeat="x in data.selectedInclusion">
                                 <img src="http://13.127.127.33/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
                                 </span>
+                            </div>
+                            <div class="widget widget-contact" ng-if="data.discount=='Yes'"> 
+                                <h3 class="widget-title">Discount Offer</h3> 
+                                {{data.discountRate}}% is discount for this package
                             </div>
                             <div class="widget widget-contact"> 
                                 <h3 class="widget-title">Check Availability</h3>

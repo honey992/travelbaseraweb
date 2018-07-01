@@ -100,7 +100,9 @@ app.directive("owlCarousel", function() {
 
 app.filter('splitByName', function(){ 
   return function(str){
-    return str.split('-')[1]
+    if(str){
+    return str.split('-')[1];
+}
   }
 })
 // app.run(function ($rootScope, $location, $route,$document,jwtHelper) {
