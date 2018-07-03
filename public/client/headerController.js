@@ -57,7 +57,7 @@ $scope.categories = function(){
   
   $scope.redirectToCities = function(country,name, code){ 
     var country = splitByName(country); 
-    $location.path('/holidays/'+country.toLowerCase()+'/cities').search({id: code+'-'+name}).replace()
+    $location.path('/holidays/'+country.toLowerCase()+'/cities').search({id: code+'-'+name})
   };
   $scope.redirectToPackages = function(name, code){
     $location.path('/package-category/'+code+'-'+name)

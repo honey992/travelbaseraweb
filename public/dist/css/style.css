@@ -3262,11 +3262,14 @@ font-family:'Quicksand', sans-serif;}
 }
 #navigation ul{padding-top:10px;}
 
-#navigation>ul>li>a{color:#fff;text-shadow: 1px 1px 1px #949090;}
+#navigation>ul>li>a{color:#fff;}
 .availibilityBox{
     border-radius: 0px;
 
 }   
+#navigation>ul>li:hover>a {
+    color: #1b75fa;
+}
 .availibilityBox .modal-content{
     border-radius: 0px
 }

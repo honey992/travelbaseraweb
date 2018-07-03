@@ -19,7 +19,7 @@ app.controller('citiesController', function($scope, $http,constant, $location){
 
   $scope.redirectToCities = function(name, code){
      
-     $location.path('/cities/'+name).replace();
+     $location.path('/cities/'+name);
   }
 
 $scope.queryString = $location.search();
@@ -37,7 +37,7 @@ $scope.getAllCity = function(){
 $scope.getAllCity();
 
 $scope.redirectToPackageView = function(val){  
-$location.url('/holidays/'+splitByName(val.c_id)+'/'+splitByName(val.s_id)+'/'+val.ci_code+'-'+val.ci_name).replace();
+$location.url('/holidays/'+splitByName(val.c_id)+'/'+splitByName(val.s_id)+'/'+val.ci_code+'-'+val.ci_name);
 
 }
 

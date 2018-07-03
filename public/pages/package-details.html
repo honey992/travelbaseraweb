@@ -6,6 +6,7 @@
     .tab-pane hr{margin:0px;}
     .tab-pane ul{padding-left: 20px;}
     .tabpaneDiv{margin-bottom:10px;}
+    .owl-carousel .owl-item img{height:400px !important;}
 </style>
 <!-- /.single page header -->
     <div class="content">
@@ -19,7 +20,7 @@
             <div class="thumbnail-carousel">
                <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
               <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
-                <img ng-src="http://13.127.127.33/{{item}}" height="400px">
+                <img ng-src="http://localhost:3001/{{item}}" height="400px">
               </div>
             </data-owl-carousel>
             </div>
@@ -151,10 +152,10 @@
                             <div class="widget widget-contact"> 
                                 <h3 class="widget-title">Inclusions</h3>
                                 <span ng-repeat="x in data.selectedInclusion">
-                                <img src="http://13.127.127.33/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
+                                <img src="http://localhost:3001/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
                                 </span>
                             </div>
-                            <div class="widget widget-contact" ng-if="data.discount=='Yes'"> 
+                            <div class="widget widget-contact" ng-if="data.discountApplied=='Yes'"> 
                                 <h3 class="widget-title">Discount Offer</h3> 
                                 {{data.discountRate}}% is discount for this package
                             </div>
