@@ -3169,7 +3169,7 @@ a img.aligncenter {
     float: right;
     width: 70px;
     height: 70px;
-    font-size: 22px;
+    font-size: 14px;
     background: #1b75fa;
     border-radius: 50%;
     padding: 10px;
@@ -3225,11 +3225,12 @@ a img.aligncenter {
 }
 .header-banner .item img{width:100%;}
 .content-Banner{
-    position: absolute;
-    width:100%;
-        top: 175px;
+   position: absolute;
+    width: 100%;
+    top: 50%;
     color: #000;
     z-index: 9;
+    margin-top: -30px;
 }
 
 .section_bg{
@@ -3318,6 +3319,13 @@ background: #0069ff;
     object-fit: cover;
     height: 100%;
 }
+.imgHeight, .mainWebSlider .owl-carousel.owl-loaded{
+    height:600px !important;
+}
+.packageImages, .packageMainSlider .owl-carousel.owl-loaded{
+    height:400px !important;
+}
+
 
 @media screen and (max-width: 1035px) {
     .testimonial-block{height:auto;text-align: center;}
@@ -3336,6 +3344,16 @@ background: #0069ff;
     position: absolute;
     right: 0px;
     top: -70px;
+
 }
+.page-title{font-size: 20px}
+.imgHeight, .mainWebSlider .owl-carousel.owl-loaded{
+    height:300px !important;
+}
+.packageImages, .packageMainSlider .owl-carousel.owl-loaded{
+    height:200px !important;
+}
+.packageDescription{ padding-right: 15px; margin-bottom: 15px }
 #navigation ul li a{color:#000 !important; text-shadow: none !important}
+.viewSection{margin-top:118px;}
 }

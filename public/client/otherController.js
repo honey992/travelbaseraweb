@@ -2,7 +2,7 @@
 
 app.controller('otherController', function($scope, $http,constant,$location, $sce,$anchorScroll,$routeParams){
  $anchorScroll();
- 
+ showLoader();
  $scope.categories = function(){
     $http.get(constant.BASE_URL+constant.CATEGORIES).then(function success(res){
                $scope.categories = res.data.data;
@@ -75,6 +75,7 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
   $scope.getPackageByCategories = function(){
     $http.get(constant.BASE_URL+constant.PACKAGE_CATEGORIES_URL+'/'+$routeParams.id).then(function success(res){  
                $scope.packByCatdata = res.data.data;  
+                hideLoader();
             }, function errorCallback(err){
                 $scope.errorPop = true;
                 $scope.successPop = false;

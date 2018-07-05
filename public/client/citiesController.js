@@ -1,6 +1,8 @@
 'use Strict';
 
-app.controller('citiesController', function($scope, $http,constant, $location){
+app.controller('citiesController', function($scope, $http,constant, $location, $anchorScroll){
+  $anchorScroll();
+  showLoader();
   function splitByName(str){
   if(str){
     return str.split('-')[1]
@@ -8,7 +10,8 @@ app.controller('citiesController', function($scope, $http,constant, $location){
  }
   $scope.getCountryStates = function(){
     $http.get(constant.BASE_URL+constant.STATESBYCOUNTRY).then(function success(res){
-               $scope.destinations_Menu = res.data.data; 
+               $scope.destinations_Menu = res.data.data;
+               hideLoader(); 
             }, function errorCallback(err){
                 $scope.errorPop = true;
                 $scope.successPop = false;
@@ -26,7 +29,8 @@ $scope.queryString = $location.search();
 $scope.getAllCity = function(){
 	
 	 $http.get(constant.BASE_URL+constant.CITYBySTATES+"/"+$scope.queryString.id).then(function success(res){
-               $scope.citiesList = res.data.data; 
+               $scope.citiesList = res.data.data;
+               hideLoader(); 
             }, function errorCallback(err){
                 $scope.errorPop = true;
                 $scope.successPop = false;

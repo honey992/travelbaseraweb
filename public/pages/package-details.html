@@ -5,8 +5,7 @@
     .content{margin-top:95px;}
     .tab-pane hr{margin:0px;}
     .tab-pane ul{padding-left: 20px;}
-    .tabpaneDiv{margin-bottom:10px;}
-    .owl-carousel .owl-item img{height:400px !important;}
+    .tabpaneDiv{margin-bottom:10px;} 
 </style>
 <!-- /.single page header -->
     <div class="content">
@@ -15,12 +14,12 @@
             <div class="container">
             <div class="package__title">{{data.title}}</div>
                 <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="padding-right:0px">
-        <div class="single-page-header" style="position: relative;">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 noplr packageDescription" >
+        <div class="single-page-header packageMainSlider" style="position: relative;">
             <div class="thumbnail-carousel">
                <data-owl-carousel class="owl-carousel" data-options="bannerOptions">
               <div owl-carousel-item="" ng-repeat="item in bannerImages" class="item">
-                <img ng-src="http://13.127.127.33/{{item}}" height="400px">
+                <img ng-src="http://localhost:3001/{{item}}" class="packageImages">
               </div>
             </data-owl-carousel>
             </div>
@@ -152,7 +151,7 @@
                             <div class="widget widget-contact"> 
                                 <h3 class="widget-title">Inclusions</h3>
                                 <span ng-repeat="x in data.selectedInclusion">
-                                <img src="http://13.127.127.33/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
+                                <img src="http://localhost:3001/{{x.i_icon}}" width="30px" height="30px" title="{{x.i_name}}" />
                                 </span>
                             </div>
                             <div class="widget widget-contact" ng-if="data.discountApplied=='Yes'"> 

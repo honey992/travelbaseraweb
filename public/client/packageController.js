@@ -1,10 +1,13 @@
 'use Strict';
 
-app.controller('packageController', function($scope, $http,constant, $location,$routeParams){
+app.controller('packageController', function($scope, $http,constant, $location,$routeParams,$anchorScroll){
+  $anchorScroll();
+  showLoader();
  $scope.cityC = $routeParams.cityId
   $scope.getCountryStates = function(){
     $http.get(constant.BASE_URL+constant.PACKAGESBYCITY+'/'+$routeParams.cityId).then(function success(res){
                $scope.data = res.data.data; 
+               hideLoader();
             }, function errorCallback(err){
                 $scope.errorPop = true;
                 $scope.successPop = false;

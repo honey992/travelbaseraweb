@@ -58,45 +58,41 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         // });
     }]);
 
-app.directive("owlCarousel", function() {
+app.directive("owlCarousel", function($timeout) {
     return {
         restrict: 'E',
         transclude: false,
-        link: function(scope) {
+        link: function (scope) {
             scope.initCarousel = function(element) {
-                console.log('initCarousel');
-
-                // provide any default options you want
-                var defaultOptions = {};
+                 $timeout(function () {
+              // provide any default options you want
+                var defaultOptions = {
+                     
+                };
                 var customOptions = scope.$eval($(element).attr('data-options'));
                 // combine the two options objects
-                for (var key in customOptions) {
+                for(var key in customOptions) {
                     defaultOptions[key] = customOptions[key];
                 }
                 // init carousel
-                var curOwl = $(element).data('owlCarousel');
-                if (!angular.isDefined(curOwl)) {
-                    $(element).owlCarousel(defaultOptions);
-                }
-                scope.cnt++;
+                $(element).owlCarousel(defaultOptions);
+            },50);
             };
         }
     };
-}).directive('owlCarouselItem', [
-    function() {
-        return {
-            restrict: 'A',
-            transclude: false,
-            link: function(scope, element) {
-                // wait for the last item in the ng-repeat then call init
-                if (scope.$last) {
-                    console.log('lst element');
-                    scope.initCarousel(element.parent());
-                }
+})
+.directive('owlCarouselItem', [function() {
+    return {
+        restrict: 'A',
+        transclude: false,
+        link: function(scope, element) {
+          // wait for the last item in the ng-repeat then call init
+            if(scope.$last) {
+                scope.initCarousel(element.parent());
             }
-        };
-    }
-]);
+        }
+    };
+}]);
 
 app.filter('splitByName', function(){ 
   return function(str){
