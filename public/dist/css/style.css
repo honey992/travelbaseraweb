@@ -3357,3 +3357,12 @@ background: #0069ff;
 #navigation ul li a{color:#000 !important; text-shadow: none !important}
 .viewSection{margin-top:118px;}
 }
+
+#navigation ul ul>li>a:hover{
+    color:#1b75fa;
+}
+.viewallNav a{
+    font-size: 13px !important;
+    text-align: center;
+    cursor: pointer;
+}

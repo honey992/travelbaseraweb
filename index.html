@@ -82,7 +82,8 @@
                                        <ul>
                                             <li ng-repeat="x in destinations_Menu"><a href="javascript:void(0)">{{x._id | splitByName}}</a>
                                                 <ul>
-                                                    <li ng-repeat="y in x.data"><a href="javascript:void(0)" ng-click="redirectToCities(x._id,y.name, y.code)">{{y.name}}</a></li> 
+                                                    <li ng-repeat="y in x.data | limitTo:9"><a href="javascript:void(0)" ng-click="redirectToCities(x._id,y.name, y.code)">{{y.name}}</a></li>
+                                                    <li ng-if="x.data.length>9" class="viewallNav"><a ng-click="viewAllStates(x)">View All&nbsp;<i class="fa fa-angle-right"></i></a></li> 
                                                 </ul>
                                             </li>
                                         </ul>
@@ -90,7 +91,8 @@
 
                                    <li><a href="javascript:void(0)">Themes </a>
                                         <ul>
-                                            <li ng-repeat="x in categories" ng-click="redirectToPackages(x.cat_name, x.cat_code)"><a href="javascript:void(0)">{{x.cat_name}}</a></li> 
+                                            <li ng-repeat="x in categories | limitTo:10" ng-click="redirectToPackages(x.cat_name, x.cat_code)"><a href="javascript:void(0)">{{x.cat_name}}</a></li>
+                                            <li ng-if="categories.length>10" class="viewallNav"><a ng-click="exploreThemes()">View All&nbsp;<i class="fa fa-angle-right"></i></a></li> 
                                         </ul>
                                     </li> 
                                 </ul>

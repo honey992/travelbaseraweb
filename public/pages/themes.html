@@ -1,0 +1,61 @@
+
+    <div class="page-header">
+        <!-- page header -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <!-- page title -->
+                    <!-- <h1 class="page-title">Cities to explore</h1> -->
+                </div> 
+            </div>
+        </div>
+    </div> 
+
+    <div class="content">
+        <!-- content -->
+        <div class="content-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="">
+                            <div class="row">
+                            <h3>Explore More Themes</h3>
+                            <br />
+                                <p>{{citiesList.stateDesc}}</p>
+
+    <div class="row" > 
+                            <div class="col-md-3" ng-repeat="x in themesList"> 
+                                <div class="hostel-thumbnail-list">
+                                    <!-- hostel thumbnail list -->
+                                    <div class="hostel-list-img" style="height:160px;    border-radius: 4px;">
+                                        <a href="javascript:void(0)" ng-click="redirectToPackages( x.cat_name,x.cat_code)">
+                                        <img ng-src="http://13.127.127.33/{{x.cat_image}}"  alt="" style="border-radius: 4px 4px 4px 4px;">
+                                         <div class="cityNameonImage">{{x.cat_name}}</div>
+                                         </a>
+                                    </div> 
+                                </div>
+                            </div> 
+    </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+   .cityNameonImage {
+           position: absolute;
+    z-index: 9999;
+    font-size: 20px;
+    top: 0px;
+    text-align: center;
+    background: #0e0e0e47;
+    width: 100%;
+    bottom: 0px;
+    padding: 70px 0px;
+    color: #fff;
+    text-shadow: 1px 2px 3px #000;
+    }
+    </style>
+ 

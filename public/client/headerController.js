@@ -1,12 +1,16 @@
 'use Strict';
 
-app.controller('headerController', function($scope, $http,constant, $location,$sce,$anchorScroll){
- function splitByName(str){
+app.controller('headerController', function($scope, $http,constant, $location,$sce,$anchorScroll,commonFactory){
+ 
+  $anchorScroll();
+
+  function splitByName(str){
   if(str){
     return str.split('-')[1]
   }
  };
-  $anchorScroll();
+
+
  var pathName = (window.location.pathname || '').split('/')[1];
   $scope.showHeader = false;
  if(pathName.toLowerCase() == 'holiday-details') $scope.showHeader = true;
@@ -61,7 +65,17 @@ $scope.categories = function(){
   };
   $scope.redirectToPackages = function(name, code){
     $location.path('/package-category/'+code+'-'+name)
+  };
+  $scope.viewAllStates = function(d){
+    localStorage.setItem('listOfStates',JSON.stringify(d));
+    var country = splitByName(d._id).split(' ').join('-');
+    $location.path('/states/'+country);
   }
+  $scope.exploreThemes = function(){
+    $location.path('/themes');
+  }
+
+
   $scope.changeUrl = function(name){
     var obj='';
     if(name == 'ab') obj = '/about-us';
@@ -72,5 +86,6 @@ $scope.categories = function(){
 
     $location.path(obj); 
   }
+
    
 })

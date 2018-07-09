@@ -32,6 +32,12 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
         }).when("/package-category/:catId", {
             templateUrl: "/pages/packageByCategory.html",
             controller: "packByCategoryController"
+        }).when("/states/:country", {
+            templateUrl: "/pages/viewStates.html",
+            controller: "otherController"
+        }).when("/themes", {
+            templateUrl: "/pages/themes.html",
+            controller: "otherController"
         }).when("/career", {
             templateUrl: "/pages/careers.html",
             controller: "otherController"
@@ -116,3 +122,18 @@ app.filter('splitByName', function(){
 //         }
 //   });
 // });
+
+app.factory('commonFactory', function() {
+    
+    var factory = {}; 
+
+    factory.setStates = function(obj) {
+          this.states = obj;
+        }
+
+    factory.getStates = function() {
+            return this.states;
+        }
+
+    return factory;
+});

@@ -1,8 +1,14 @@
 'use Strict';
 
-app.controller('otherController', function($scope, $http,constant,$location, $sce,$anchorScroll,$routeParams){
+app.controller('otherController', function($scope, $http,constant,$location, $sce,$anchorScroll,$routeParams,commonFactory){
  $anchorScroll();
  showLoader();
+ function splitByName(str){
+  if(str){
+    return str.split('-')[1]
+  }
+ };   
+  var _params = $location.path(); 
  $scope.categories = function(){
     $http.get(constant.BASE_URL+constant.CATEGORIES).then(function success(res){
                $scope.categories = res.data.data;
@@ -20,6 +26,7 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
   }
 
   $scope.redirectToPackages = function(name, code){
+    var _url = '';
     $location.path('/package-category/'+code+'-'+name)
   }
 
@@ -84,7 +91,33 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
   };
   $scope.getPackageByCategories();  
 
-  
+  if(_params.indexOf('/states/') != -1){
+    var statesList = localStorage.getItem('listOfStates')? JSON.parse(localStorage.getItem('listOfStates')): null;
+    if(statesList){
+      $scope.stateListdata = statesList
+    } 
+  }
 
+   $scope.redirectToCities = function(country,name, code){ 
+    var country = splitByName(country); 
+    $location.path('/holidays/'+country.toLowerCase()+'/cities').search({id: code+'-'+name})
+  };
+
+  $scope.getThemes = function(){
+    $http.get(constant.BASE_URL+constant.CATEGORIES).then(function success(res){
+               $scope.themesList = res.data.data;
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+  if(_params.indexOf('/themes') != -1){
+   $scope.getThemes();
+
+ };
+ $scope.redirectToPackages = function(name, code){
+    $location.path('/package-category/'+code+'-'+name)
+  };
    
 })
