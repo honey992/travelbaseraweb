@@ -119,5 +119,31 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
  $scope.redirectToPackages = function(name, code){
     $location.path('/package-category/'+code+'-'+name)
   };
+
+  $scope.submitContactForm  = function(form){
+    if($scope.contactForm.$valid){
+        showLoader();
+            var obj =  {
+                        to: "travelbaseraholidays@gmail.com",
+                        //to:"sharmasaurabh450@gmail.com",
+                        subject: 'New Contact Query from TravelBasera.com', 
+                        text: '<b>Name:</b> '+form.fname+ ' '+form.lname+ "<br /> <b>Email: </b>"+form.email+" <br /><b>Query: </b>"+form.query
+                       };
+          $http.post(constant.BASE_URL+constant.SENDEMAIL_URL, obj).then(function success(res){ 
+            $scope.errorPop = false;
+                      $scope.successPop = true;
+                      $scope.successMsg = res.data.message;
+                      hideLoader();        
+                  }, function errorCallback(err){
+                      $scope.errorPop = true;
+                      $scope.successPop = false;
+                     $scope.errorMsg = err.data.message;
+
+                  }); 
+  }
+else{
+  alert('Fields are requied')
+  }
+}
    
 })

@@ -24,6 +24,7 @@ app.constant("constant", (function() {
         FAQ_URL : 'v1/api/faq',
         TERMCONDITION_URL : 'v1/api/termAndConditions',
         PACKAGE_CATEGORIES_URL : 'v1/api/packagesBycategories',
-        DISCOUNTED_URL : 'v1/api/discounted'
+        DISCOUNTED_URL : 'v1/api/discounted',
+        SENDEMAIL_URL  : "api/sendEmail"
     }
 })());

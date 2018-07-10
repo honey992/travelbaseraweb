@@ -24,25 +24,25 @@
                         <div class="well-box">
                             <h2>Have any questions? We're here to help!</h2>
                             <p>For general inquiries and support, please fill out the form below.</p>
-                            <form>
+                            <form name="contactForm">
                                 <div class="form-group">
                                     <label for="fname">First Name <span class="required">*</span> </label>
-                                    <input type="text" name="fname" class="form-control" id="fname" placeholder="Email">
+                                    <input type="text" name="fname" class="form-control" id="fname" required placeholder="First Name" ng-model="contact.fname">
                                 </div>
                                 <div class="form-group">
                                     <label for="lname">Last Name<span class="required">*</span> </label>
-                                    <input type="email" name="lname" class="form-control" id="lname" placeholder="Email">
+                                    <input type="text" name="lname" class="form-control" id="lname" required placeholder="Last Name" ng-model="contact.lname">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email address <span class="required">*</span> </label>
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                    <input type="text" class="form-control" name="email" id="email" required placeholder="Email" ng-model="contact.email">
                                 </div> 
                                 <div class="form-group">
                                     <label for="subject">Query</label>
-                                    <textarea class="form-control" id="subject" name="subject" rows="6" placeholder="Enter Query"></textarea>
+                                    <textarea class="form-control" id="subject" name="subject" rows="6" required ng-model="contact.query" placeholder="Enter Query"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-default" type="submit"> Submit </button>
+                                    <button class="btn btn-default" type="submit" ng-click="submitContactForm(contact)"> Submit </button>
                                 </div>
                             </form>
                         </div>
