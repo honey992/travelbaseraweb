@@ -1,6 +1,6 @@
 'use Strict';
 
-app.controller('headerController', function($scope, $http,constant, $location,$sce,$anchorScroll,commonFactory){
+app.controller('headerController', function($scope, $http,constant, $location,$sce,$anchorScroll,commonFactory,$window){
  
   $anchorScroll();
 
@@ -85,6 +85,10 @@ $scope.categories = function(){
     else if(name == 'tc') obj = '/terms-and-condition';
 
     $location.path(obj); 
+  }
+
+  $scope.OpenNewLink =  function(url){
+    $window.open(url, '_blank');
   }
 
    

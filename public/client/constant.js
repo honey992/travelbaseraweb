@@ -30,4 +30,3 @@ app.constant("constant", (function() {
 })());
 
 
-admin@sowillimited
