@@ -5,7 +5,7 @@ app.constant("constant", (function() {
 
 
          //BASE_URL: window.location.protocol + '//' + window.location.hostname+':3001/',       //This is base url for HTTP POST, GET, PUT, DELETE Methods
-         BASE_URL: 'http://13.127.127.33/',   
+         BASE_URL: 'http://www.admin.travelbasera.com/',   
         SECOND_URL: window.location.protocol + '//' + window.location.hostname + '/' ,      //This is second url for HTTP POST, GET, PUT, DELETE Methods
 
         
@@ -28,3 +28,6 @@ app.constant("constant", (function() {
         SENDEMAIL_URL  : "api/sendEmail"
     }
 })());
+
+
+admin@sowillimited
