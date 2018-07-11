@@ -37,10 +37,10 @@
                                     </div>
                                     <div class="hostel-content">
                                         <div class="">
-                                            <h3 class="hostel-title"><a href="javascript:void(0)" ng-click="redirectToPackageDetails(x.title, x._id)" class="title">{{x.title}}</a></h3>
+                                            <h3 class="hostel-title"><a href="javascript:void(0)" ng-click="redirectToPackageDetails(x.title, x._id)" class="title">{{x.title.length>28?x.title.substring(0,28)+'...':x.title}}</a></h3>
                                            
                                             <ul style="list-style: none">    
-                                                <li ng-repeat="y in x.highlights" style="font-size: 13px;line-height: 18px">{{y.title}}</li>
+                                                <li ng-repeat="y in x.highlights  |limitTo:3" style="font-size: 13px;line-height: 18px">{{y.title.length>40?y.title.substring(0,40)+'...':y.title}}</li>
                                             </ul> 
                                         </div>
                                         <div class="hostel-meta">

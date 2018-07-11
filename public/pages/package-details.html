@@ -51,11 +51,11 @@
 
     <!--Package Details-->
   <ul class="nav nav-tabs">
-        <li class="active" ng-class="{ active: isSet(1) }" ng-click="setTab(1)"><a href="javascript:void(0)"><i class="fa fa-location-arrow"></i></a></li>
-        <li ng-class="{ active: isSet(2) }" ng-click="setTab(2)"><a href="javascript:void(0)"><i class="fa fa-map-pin"></i></a></li>
-        <li ng-class="{ active: isSet(3) }" ng-click="setTab(3)"><a href="javascript:void(0)"><i class="fa fa-map-marker"></i></a></li>
-        <li ng-class="{ active: isSet(4) }" ng-click="setTab(4)"><a href="javascript:void(0)"><i class="fa fa-hotel"></i></a></li>
-        <li ng-class="{ active: isSet(5) }" ng-click="setTab(5)"><a href="javascript:void(0)"><i class="fa fa-file-o"></i></a></li>
+        <li class="active" ng-class="{ active: isSet(1) }" ng-click="setTab(1)"><a title="Overview" href="javascript:void(0)"><i class="fa fa-location-arrow"></i></a></li>
+        <li ng-class="{ active: isSet(2) }" ng-click="setTab(2)"><a title="Inclusions" href="javascript:void(0)"><i class="fa fa-exchange"></i></a></li>
+        <li ng-class="{ active: isSet(3) }" ng-click="setTab(3)"><a title="Itenary" href="javascript:void(0)"><i class="fa fa-map-o"></i></a></li>
+        <li ng-class="{ active: isSet(4) }" ng-click="setTab(4)"><a title="Dates & Rates" href="javascript:void(0)"><i class="fa fa-calendar"></i></a></li>
+        <li ng-class="{ active: isSet(5) }" ng-click="setTab(5)"><a title="Policies"href="javascript:void(0)"><i class="fa fa-file-o"></i></a></li>
 
   </ul>
 
@@ -221,38 +221,60 @@
         <h4 class="modal-title">Availability Check</h4>
       </div>
       <div class="modal-body" style="width:100%; float:left">
-        <form>
+        <form name="availForm">
             <div class="col-md-6">
-            <label>Name</label>
-                <input type="text" class="form-control" placeholder="Enter Name"><br />
-             <label>Mobile No.</label>   
-                <input type="tel" class="form-control" placeholder="Enter Mobile"><br />
+            <label>Name*</label>
+                <input type="text" class="form-control" placeholder="Enter Name" ng-model="enquiry.name" required><br />
+             <label>Mobile No.*</label>   
+                <input type="tel" class="form-control" placeholder="Enter Mobile" name="mobile" ng-model="enquiry.mobile" required maxlength="10" minlength="10" ng-pattern="/^\d{10}$/">
+                <p class="__errorMsg" ng-show="availForm.mobile.$touched && availForm.mobile.$invalid ">
+                <span ng-show="availForm.mobile.$error.required">Mobile number is required.</span>
+                <span ng-show="availForm.mobile.$error.pattern">Enter valid Mobile number.</span>
+                <span ng-show="availForm.mobile.$error.min">Enter valid Mobile number.</span>
+                <span ng-show="availForm.mobile.$error.max">Enter valid Mobile number.</span>
+            </p>
+
+                <br />
             <label>Travel From</label>
-                <input type="date" class="form-control" > <br />
+                <input type="date" class="form-control" ng-model="enquiry.from"> <br />
             <label>No. of Travellers</label>
-                <input type="number" class="form-control" min="1" placeholder="No. of Travellers">
+                <input type="number" class="form-control" min="1" placeholder="No. of Travellers" ng-model="enquiry.travellers">
                 
             </div>
             <div class="col-md-6">
-            <label>Email Id</label>
-                <input type="text" class="form-control" placeholder="Enter Email "><br />
+            <label>Email Id*</label>
+                <input type="text" class="form-control" placeholder="Enter Email " ng-pattern="/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" name="email" ng-model="enquiry.email" required>
+                  <p class="__errorMsg" ng-show="availForm.email.$touched && availForm.email.$invalid ">
+                    <span ng-show="availForm.email.$error.required">Email is required.</span>
+                    <span ng-show="availForm.email.$error.pattern">Enter valid Email.</span>
+                </p>
+
+                <br /> 
                 <label>Country</label>
-                <input type="text" class="form-control" placeholder="Enter Country"><br />
-<label>Travel To</label>
-                <input type="date" class="form-control" placeholder="Enter Country"><br /> 
+                <input type="text" class="form-control" placeholder="Enter Country" ng-model="enquiry.country"><br />
+            <label>Travel To</label>
+                <input type="date" class="form-control" placeholder="Enter Country" ng-model="enquiry.to"> <br /> 
             <label>Additional Query</label>
-                <textarea rows="3" class="form-control" placeholder="Additional Query"></textarea> 
+                <textarea rows="3" class="form-control" placeholder="Additional Query" ng-model="enquiry.query"></textarea> 
             </div>
             <div class="col-md-12">
             
             </div>
+            <div style="clear:both"></div>
+            <div class="alert alert-success" ng-if="successPop">Your query is submitted successfully.</div>
         </form>
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-success " data-dismiss="modal">Submit</button>
+      <button type="button" class="btn btn-success " ng-click="submitForm(enquiry)">Submit</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
 
   </div>
 </div>
+<style>
+.__errorMsg{
+  font-size:12px;
+  color:red;
+}
+</style>

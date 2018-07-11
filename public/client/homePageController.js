@@ -157,7 +157,7 @@ $scope.searchPackage  = function(search){
             loop:true,
             margin:0,
             autoplay:true,
-            autoplayTimeout:3000, 
+            autoplayTimeout:4500, 
             nav:true,
             rewindSpeed : 200,
     		    navText:['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],

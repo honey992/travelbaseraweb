@@ -120,19 +120,19 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
     $location.path('/package-category/'+code+'-'+name)
   };
 
-  $scope.submitContactForm  = function(form){
+  $scope.submitContactForm  = function(form){ 
     if($scope.contactForm.$valid){
         showLoader();
             var obj =  {
-                        to: "travelbaseraholidays@gmail.com",
-                        //to:"sharmasaurabh450@gmail.com",
-                        subject: 'New Contact Query from TravelBasera.com', 
-                        text: '<b>Name:</b> '+form.fname+ ' '+form.lname+ "<br /> <b>Email: </b>"+form.email+" <br /><b>Query: </b>"+form.query
+                        to: "travelbaseraholidays@gmail.com", 
+                        subject: 'New Contact Query:TravelBasera.com', 
+                        text: '<b>Name:</b> '+form.fname+ ' '+form.lname+ "<br /> <b>Email: </b>"+form.email+"<b>Mobile: </b>"+form.mobile+" <br /><b>Query: </b>"+form.query
                        };
           $http.post(constant.BASE_URL+constant.SENDEMAIL_URL, obj).then(function success(res){ 
             $scope.errorPop = false;
                       $scope.successPop = true;
                       $scope.successMsg = res.data.message;
+                      $scope.contact = {};
                       hideLoader();        
                   }, function errorCallback(err){
                       $scope.errorPop = true;
@@ -140,10 +140,9 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
                      $scope.errorMsg = err.data.message;
 
                   }); 
-  }
-else{
-  alert('Fields are requied')
-  }
+  } else{
+      alert('Fields are mandatory')
+     }
 }
    
 })
