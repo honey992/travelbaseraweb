@@ -35,9 +35,14 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-    ng-cloak {
+            display: none !important;
+        }
+    </style>
 </head>
 
-<body>
+<body ng-cloak>
     <div class="header-wide">
         <!-- header wide -->
         <div class="header-top">
@@ -104,7 +109,7 @@
         </div>
         <!-- header -->
 
-    <div ng-view ></div>
+    <div ng-view ng-cloak></div>
 
  
     <!-- /.newsletter -->
