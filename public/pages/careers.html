@@ -19,10 +19,31 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class="well-box">
-                            <h2>Billing Information</h2>
-                            <p>To checkout this hostel please fill out this billing informations</p>
-                             
+                        <div class="well-box"> 
+                            <accordion>
+                                <expander class="expander" data-ng-repeat="x in careerList" data-expander-title="{{x.job_title}}">
+                                    <div class="row jobAccordian">
+                                        <div class="col-md-12"> 
+                                            <div class="col-md-6">
+                                                <p><label>Location:</label>&nbsp; <span>{{x.job_location}}</span></p>
+                                                <p><label>Function:</label>&nbsp; <span>{{x.job_function}}</span></p>
+                                                <p><label>Experience:</label>&nbsp; <span>{{x.job_experience}}</span></p>
+                                            </div>
+                                            <div class="col-md-6">&nbsp;</div> 
+                                        
+                                        </div> 
+                                        <div class="col-md-12" style="margin-left:15px"> 
+                                            <p><b>Job Description:</b></p>
+                                            <p data-bind-html="x.job_description">{{x.job_description}}</p>
+                                            
+                                            <br />
+                                            
+                                            <p>To apply for this position please send your update CV to <a mailto:'Travelbaseraholidays@gmail.com'>travelbaseraholidays@gmail.com</a> with subject  "CV for {{x.job_title}}"</p>
+                                        </div>
+                                        
+                                    </div>
+                                </expander>
+                            </accordion>
                         </div>
                     </div> 
                 </div>
@@ -30,3 +51,11 @@
         </div>
     </div>
    
+    <style>
+        .jobAccordian p{margin-bottom:0px}
+         .expander{ border: 1px solid #d7dbde; width: 100%; }
+        .expander>.title{background: #e8e8e8; color: #3c3d3e;
+    padding: 10px; font-weight: bold; font-size: 15px; cursor: pointer; border-radius: 2px;}
+    .expander>.title:hover{background: #1a75fa;  color: #fff;}
+        .expander>.body{ padding: .1em .3em; }
+        </style>

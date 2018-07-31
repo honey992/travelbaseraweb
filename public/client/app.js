@@ -99,7 +99,55 @@ app.directive("owlCarousel", function($timeout) {
         }
     };
 }]);
-
+app.directive( 'accordion', function ()
+{
+    return {
+        restrict  : 'EA',
+        replace   : true,
+        transclude: true,
+        template  : '<div data-ng-transclude=""></div>',
+        controller: function ()
+        {
+            var expanders = [];
+            this.gotOpened = function ( selected_expander )
+            {
+                angular.forEach( expanders, function ( expander )
+                {
+                    if ( selected_expander != expander )
+                        expander.showMe = false;
+                } );
+            };
+            this.addExpander = function ( expander )
+            {
+                expanders.push( expander );
+            };
+        }
+    };
+} )
+.directive( 'expander', function ()
+{
+    return {
+        restrict  : 'EA',
+        replace   : true,
+        transclude: true,
+        require   : '^accordion',
+        scope     : {title: '@expanderTitle'},
+        template  : '<div>' +
+                    '<div class="title" data-ng-click="toggle()">{{title}}</div>' +
+                    '<div class="body" data-ng-show="showMe" data-ng-transclude=""></div>' +
+                    '</div>',
+        link      : function ( scope, element, attrs, accordionController )
+        {
+            scope.showMe = false;
+            accordionController.addExpander( scope );
+            scope.toggle = function ()
+            {
+                scope.showMe = !scope.showMe;
+                accordionController.gotOpened( scope );
+            };
+        }
+    }
+} )
 app.filter('splitByName', function(){ 
   return function(str){
     if(str){

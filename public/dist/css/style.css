@@ -1529,7 +1529,7 @@ Homepage-2
     background: #fff;
     padding: 15px;
     border-radius: 0px 0px 4px 4px;
-    max-height: 155px;
+    min-height: 156px;
 }
 .hostel-head {
     margin-bottom: 20px;

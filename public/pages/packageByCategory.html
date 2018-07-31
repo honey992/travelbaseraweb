@@ -35,7 +35,7 @@
                                            <img src="http://www.admin.travelbasera.com/{{y.i_icon}}" width="30px !important" height="30px" title="{{y.i_name}}" /></span>
                                         </div>
                                     </div>
-                                    <div class="hostel-content">
+                                    <div class="hostel-content" style="min-height: 137px;">
                                         <div class="">
                                             <h3 class="hostel-title"><a href="javascript:void(0)" ng-click="redirectToPackageDetails(x.title, x._id)" class="title">{{x.title.length>28?x.title.substring(0,28)+'...':x.title}}</a></h3>
                                            
@@ -44,7 +44,8 @@
                                             </ul> 
                                         </div>
                                         <div class="hostel-meta">
-                                            <span class="hostel-price"><span class="price-from">Starting From</span>&nbsp; <span class="price"><i class="fa fa-rupee"></i> {{x.rate}}</span></span>
+                                            <span class="hostel-price" ng-if="x.rate !=0"><span class="price-from">Starting From</span>&nbsp; <span class="price"><i class="fa fa-rupee"></i> {{x.rate}}</span><small>/ Per Adult</small></span>
+                                            <span class="hostel-price" ng-if="x.rate ==0"><span class="price-from">Starting From</span>&nbsp; <span class="price"><i class="fa fa-rupee"></i>Price on Demand</span></span>
                                             <span class="hostel-rating"> 
                                             <span class="reviews">{{x.days}} <i class="fa fa-sun-o" style="color: #1b75fa;"></i>/ {{x.nights}} <i class="fa fa-moon-o" style="color: #1b75fa;"></i></span>
                                             </span>

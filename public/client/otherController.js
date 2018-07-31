@@ -144,6 +144,20 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
   } else{
       alert('Fields are mandatory')
      }
-}
-   
+} 
+
+/**Get Job Openeing List  **/
+$scope.getJobOpenings = function(){
+    $http.get(constant.BASE_URL+constant.CAREER_URL).then(function success(res){
+               $scope.careerList = res.data.data; 
+               angular.forEach('$scope.careerList', function(o){
+                    o.job_description = $sce.trustAsHtml(o.job_description);
+               });
+            }, function errorCallback(err){
+                $scope.errorPop = true;
+                $scope.successPop = false;
+                $scope.errorMsg = err.data.message;
+      });
+  };
+   $scope.getJobOpenings();   
 })
