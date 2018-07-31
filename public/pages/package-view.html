@@ -39,7 +39,9 @@
                                             </ul> 
                                         </div>
                                         <div class="hostel-meta">
-                                            <span class="hostel-price"><span class="price-from">Starting From</span>&nbsp; <span class="price"><i class="fa fa-rupee"></i> {{x.rate}}</span><small>/ Per Adult</small></span>
+                                            <span class="hostel-price" ng-if="x.rate !=0"><span class="price-from">Starting From</span>&nbsp; <span class="price"><i class="fa fa-rupee"></i> {{x.rate}}</span><small>/ Per Adult</small></span>
+                                            <span class="hostel-price" ng-if="x.rate == 0"><span class="price-from">Starting From</span>&nbsp; <span class="price"><i class="fa fa-rupee"></i> Price on Demand</span></span>
+                                            
                                             <span class="hostel-rating"> 
                                             <span class="reviews">{{x.days}} <i class="fa fa-sun-o" style="color: #1b75fa;"></i>/ {{x.nights}} <i class="fa fa-moon-o" style="color: #1b75fa;"></i></span>
                                             </span>
