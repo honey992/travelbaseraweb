@@ -113,8 +113,7 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
       });
   };
   if(_params.indexOf('/themes') != -1){
-   $scope.getThemes();
-
+   $scope.getThemes(); 
  };
  $scope.redirectToPackages = function(name, code){
     $location.path('/package-category/'+code+'-'+name)
@@ -150,14 +149,19 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
 $scope.getJobOpenings = function(){
     $http.get(constant.BASE_URL+constant.CAREER_URL).then(function success(res){
                $scope.careerList = res.data.data; 
-               angular.forEach('$scope.careerList', function(o){
-                    o.job_description = $sce.trustAsHtml(o.job_description);
-               });
+               $scope.dd =  $sce.trustAsHtml($scope.careerList[0].job_description);
+            //    $scope.careerList.forEach(function(o){
+            //     o.job_details = $sce.trustAsHtml(o.job_description);
+            //    });
+            $scope.careerList.map(function(o){
+                o.job_details =  $sce.trustAsHtml(o.job_description);
+            })
             }, function errorCallback(err){
                 $scope.errorPop = true;
                 $scope.successPop = false;
                 $scope.errorMsg = err.data.message;
       });
   };
-   $scope.getJobOpenings();   
+  if(_params.indexOf('/career') != -1) $scope.getJobOpenings();   
+   
 })
