@@ -118,10 +118,8 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
  $scope.redirectToPackages = function(name, code){
     $location.path('/package-category/'+code+'-'+name)
   };
-  $scope.sendQueryInitiated = false;
   $scope.submitContactForm  = function(form){ 
     if($scope.contactForm.$valid){
-      $scope.sendQueryInitiated = true;
         showLoader();
             var obj =  {
                         //to: "travelbaseraholidays@gmail.com", 
@@ -141,8 +139,7 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
                     console.log(err,"error****")
                       $scope.errorPop = true;
                       $scope.successPop = false;
-                     $scope.errorMsg = err.data.message;
-                     hideLoader();        
+                     $scope.errorMsg = err.data.message; 
                   }); 
   } else{
       alert('Fields are mandatory')
