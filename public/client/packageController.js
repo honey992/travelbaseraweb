@@ -7,6 +7,7 @@ app.controller('packageController', function($scope, $http,constant, $location,$
   $scope.getCountryStates = function(){
     $http.get(constant.BASE_URL+constant.PACKAGESBYCITY+'/'+$routeParams.cityId).then(function success(res){
                $scope.data = res.data.data; 
+               console.log($scope.data, "Surbhi");
                hideLoader();
             }, function errorCallback(err){
                 $scope.errorPop = true;

@@ -54,7 +54,7 @@ $scope.bannerImages = [];
             var obj =  {
                         to: "travelbaseraholidays@gmail.com", 
                         //to: "sharmasaurabh450@gmail.com", 
-                        subject: 'New Enquiry:TravelBasera.com', 
+                        subject: 'New Enquiry:BaseraHolidays.com', 
                         text: '<b>Name:</b> '+form.name+ "<br />"+
                         " <b>Email: </b>"+form.email+"<br />"+
                         "<b>Mobile: </b>"+form.mobile+" <br />"+

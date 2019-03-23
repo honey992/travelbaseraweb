@@ -5,7 +5,7 @@ app.constant("constant", (function() {
 
 
          //BASE_URL: window.location.protocol + '//' + window.location.hostname+':3001/',       //This is base url for HTTP POST, GET, PUT, DELETE Methods
-         BASE_URL: 'http://www.admin.travelbasera.com/',   
+         BASE_URL: 'http://www.admin.baseraholidays.com/',   
         SECOND_URL: window.location.protocol + '//' + window.location.hostname + '/' ,      //This is second url for HTTP POST, GET, PUT, DELETE Methods
 
         
