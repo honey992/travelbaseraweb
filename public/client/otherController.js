@@ -138,6 +138,7 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
                       $scope.contact = {};
                       hideLoader();        
                   }, function errorCallback(err){
+                    console.log(err,"error****")
                       $scope.errorPop = true;
                       $scope.successPop = false;
                      $scope.errorMsg = err.data.message;
