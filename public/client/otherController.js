@@ -118,13 +118,14 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
  $scope.redirectToPackages = function(name, code){
     $location.path('/package-category/'+code+'-'+name)
   };
-
+  $scope.sendQueryInitiated = false;
   $scope.submitContactForm  = function(form){ 
     if($scope.contactForm.$valid){
+      $scope.sendQueryInitiated = true;
         showLoader();
             var obj =  {
                         //to: "travelbaseraholidays@gmail.com", 
-                        to: "sharmasaurabh450@gmail.com", 
+                        to: "surbhisingh612@gmail.com", 
                         subject: 'New Contact Query:BaseraHolidays.com', 
                         text: '<b>Name:</b> '+form.fname+ ' '+form.lname+ "<br /> <b>Email: </b>"+form.email+"<br /><b>Mobile: </b>"+form.mobile+" <br /><b>Query: </b>"+form.query
                        };
