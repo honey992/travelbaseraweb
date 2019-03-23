@@ -1,7 +1,7 @@
 'use Strict';
 
 app.controller('packageDetailController', function($scope, $http,constant, $location,$routeParams, $sce,$anchorScroll){
- 	
+ 	console.log("controller initiated")
  	$scope.tab = 1;
   $anchorScroll();
   showLoader();
