@@ -142,7 +142,7 @@ app.controller('otherController', function($scope, $http,constant,$location, $sc
                       $scope.errorPop = true;
                       $scope.successPop = false;
                      $scope.errorMsg = err.data.message;
-
+                     hideLoader();        
                   }); 
   } else{
       alert('Fields are mandatory')
